@@ -8,8 +8,8 @@
   "pageTitle": "Privacy Policy",
   "eyebrow": "Official Privacy Policy",
   "summary": "This Privacy Policy explains how PongTrace processes information, the purposes and legal grounds for processing, retention and deletion, disclosures, security measures, and the choices and rights available to you. It applies to the current iOS version of PongTrace.",
-  "effectiveDate": "Effective date: August 25, 2026",
-  "version": "Policy version: 1.0",
+  "effectiveDate": "Effective date: August 28, 2026",
+  "version": "Policy version: 1.1",
   "contentsLabel": "In this policy",
   "ui": {
     "skipToContent": "Skip to policy",
@@ -77,7 +77,7 @@
     {
       "id": "on-device-analysis",
       "title": "On-device analysis",
-      "body": "Pose detection, smart clipping, and action comparison run on your device. MediaPipe Tasks Vision is used as an on-device pose-processing component. PongTrace does not implement a network path that sends your videos or pose results to MediaPipe, Google, the developer, or an analytics service."
+      "body": "Pose detection, smart clipping, and action comparison run on your device. MediaPipe Tasks Vision is used as an on-device pose-processing component. PongTrace does not implement a network path that sends your videos or pose results to MediaPipe, Google, the developer, or an analytics service. Pose landmarks and movement metrics are not used to identify or authenticate you."
     },
     {
       "id": "permissions",
@@ -107,7 +107,7 @@
     {
       "id": "advertising-and-analytics",
       "title": "Advertising and analytics",
-      "body": "The current version contains no advertising, analytics, or tracking SDK. Before any future version integrates Google AdMob or another data-collecting service, this policy and the App Store privacy disclosures will be updated to identify the relevant data categories, purposes, and recipients. Where legally required, consent and a way to change or withdraw privacy choices will be provided before advertising processing begins."
+      "body": "The current version contains no advertising, analytics, or tracking SDK and does not use personal information for advertising or tracking. If these practices change, this policy and the App Store privacy disclosures will be updated before the revised processing begins. Where legally required, consent and a way to change or withdraw privacy choices will be provided."
     },
     {
       "id": "children",

@@ -8,8 +8,8 @@
   "pageTitle": "隐私政策",
   "eyebrow": "官方隐私政策",
   "summary": "本隐私政策说明 PongTrace 如何处理信息，包括处理目的和法律依据、保留与删除、对外披露、安全措施，以及你可以行使的选择和权利。本政策适用于当前 iOS 版本的 PongTrace。",
-  "effectiveDate": "生效日期：2026年8月25日",
-  "version": "政策版本：1.0",
+  "effectiveDate": "生效日期：2026年8月28日",
+  "version": "政策版本：1.1",
   "contentsLabel": "政策目录",
   "ui": {
     "skipToContent": "跳到正文",
@@ -68,7 +68,7 @@
     {
       "id": "on-device-analysis",
       "title": "本地设备分析",
-      "body": "姿态识别、智能剪辑和动作对比均在你的设备上运行。MediaPipe Tasks Vision 仅作为设备本地的姿态处理组件使用。PongTrace 未实现把你的视频或姿态结果发送给 MediaPipe、Google、开发者或分析服务的网络通道。"
+      "body": "姿态识别、智能剪辑和动作对比均在你的设备上运行。MediaPipe Tasks Vision 仅作为设备本地的姿态处理组件使用。PongTrace 未实现把你的视频或姿态结果发送给 MediaPipe、Google、开发者或分析服务的网络通道。姿态关键点和动作指标不会用于识别或验证你的身份。"
     },
     {
       "id": "permissions",
@@ -98,7 +98,7 @@
     {
       "id": "advertising-and-analytics",
       "title": "广告和分析",
-      "body": "当前版本不包含广告、分析或跟踪 SDK。未来版本接入 Google AdMob 或其他收集数据的服务前，将先更新本政策和 App Store 隐私披露，并明确相关数据类别、处理目的和接收方。适用法律要求时，会在广告相关处理开始前取得同意，并提供修改或撤回隐私选择的入口。"
+      "body": "当前版本不包含广告、分析或跟踪 SDK，也不会将个人信息用于广告或跟踪。如果这些处理方式发生变化，将在新的处理开始前更新本政策和 App Store 隐私披露。适用法律要求时，会先取得同意，并提供修改或撤回隐私选择的方式。"
     },
     {
       "id": "children",

@@ -8,8 +8,8 @@
   "pageTitle": "Datenschutzrichtlinie",
   "eyebrow": "Offizielle Datenschutzrichtlinie",
   "summary": "Diese Datenschutzerklärung erläutert, wie PongTrace Informationen verarbeitet, zu welchen Zwecken und auf welcher Rechtsgrundlage dies geschieht, wie lange Informationen gespeichert werden, an wen sie weitergegeben werden können, welche Schutzmaßnahmen gelten und welche Wahlmöglichkeiten und Rechte Sie haben. Sie gilt für die aktuelle iOS-Version von PongTrace.",
-  "effectiveDate": "Gültig ab: 25. August 2026",
-  "version": "Version der Richtlinie: 1.0",
+  "effectiveDate": "Gültig ab: 28. August 2026",
+  "version": "Version der Richtlinie: 1.1",
   "contentsLabel": "In dieser Richtlinie",
   "ui": {
     "skipToContent": "Zum Inhalt springen",
@@ -77,7 +77,7 @@
     {
       "id": "on-device-analysis",
       "title": "Analyse auf dem Gerät",
-      "body": "Körperhaltungserkennung, intelligente Clips und Bewegungsvergleich laufen auf Ihrem Gerät. MediaPipe Tasks Vision wird als lokale Komponente zur Verarbeitung der Körperhaltung verwendet. PongTrace besitzt keine Funktion, die Ihre Videos oder Haltungsergebnisse über das Netzwerk an MediaPipe, Google, den Entwickler oder einen Analysedienst sendet."
+      "body": "Körperhaltungserkennung, intelligente Clips und Bewegungsvergleich laufen auf Ihrem Gerät. MediaPipe Tasks Vision wird als lokale Komponente zur Verarbeitung der Körperhaltung verwendet. PongTrace besitzt keine Funktion, die Ihre Videos oder Haltungsergebnisse über das Netzwerk an MediaPipe, Google, den Entwickler oder einen Analysedienst sendet. Haltungspunkte und Bewegungsmesswerte werden nicht dazu verwendet, Sie zu identifizieren oder zu authentifizieren."
     },
     {
       "id": "permissions",
@@ -107,7 +107,7 @@
     {
       "id": "advertising-and-analytics",
       "title": "Werbung und Analyse",
-      "body": "Die aktuelle Version enthält kein Werbe-, Analyse- oder Tracking-SDK. Bevor eine zukünftige Version Google AdMob oder einen anderen datenerhebenden Dienst einbindet, werden diese Richtlinie und die Datenschutzangaben im App Store aktualisiert und die betreffenden Datenkategorien, Zwecke und Empfänger benannt. Soweit gesetzlich erforderlich, werden vor Beginn der Werbeverarbeitung eine Einwilligung sowie eine Möglichkeit zum Ändern oder Widerrufen der Auswahl angeboten."
+      "body": "Die aktuelle Version enthält kein Werbe-, Analyse- oder Tracking-SDK und verwendet personenbezogene Informationen weder für Werbung noch für Tracking. Ändert sich diese Praxis, werden diese Richtlinie und die Datenschutzangaben im App Store vor Beginn der geänderten Verarbeitung aktualisiert. Soweit gesetzlich erforderlich, werden eine Einwilligung sowie eine Möglichkeit zum Ändern oder Widerrufen der Datenschutzentscheidung angeboten."
     },
     {
       "id": "children",
