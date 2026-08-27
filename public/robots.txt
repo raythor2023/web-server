@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://raythor2023.github.io/web-server/sitemap-index.xml

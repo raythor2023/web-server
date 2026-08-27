@@ -1,0 +1,22 @@
+---
+import { privacyPath } from '../config/site';
+
+const destination = privacyPath('zh-Hans');
+---
+
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="refresh" content={`0;url=${destination}`} />
+    <meta name="robots" content="noindex" />
+    <title>PongTrace</title>
+  </head>
+  <body>
+    <p>正在前往 <a href={destination}>PongTrace 隐私政策</a>…</p>
+    <script is:inline define:vars={{ destination }}>
+      window.location.replace(destination);
+    </script>
+  </body>
+</html>

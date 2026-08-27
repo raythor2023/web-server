@@ -1,0 +1,175 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import SiteFooter from './SiteFooter.astro';
+import SiteHeader from './SiteHeader.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { LOCALES, privacyPath } from '../config/site';
+
+type PolicyData = CollectionEntry<'privacy'>['data'];
+
+interface Props {
+  policy: PolicyData;
+  availableLocales: string[];
+}
+
+const { policy, availableLocales } = Astro.props;
+const iconLarge = `${import.meta.env.BASE_URL}images/pongtrace/app-icon-512.png`;
+const pageDescription = policy.summary;
+const alternateLocales = LOCALES.filter((locale) => availableLocales.includes(locale.code)).map(
+  (locale) => ({ lang: locale.htmlLang, href: privacyPath(locale.code) }),
+);
+---
+
+<BaseLayout
+  title={`${policy.pageTitle} · PongTrace`}
+  description={pageDescription}
+  lang={policy.htmlLang}
+  skipLabel={policy.ui.skipToContent}
+  alternateLocales={alternateLocales}
+>
+  <div class="reading-progress" data-reading-progress aria-hidden="true"></div>
+  <SiteHeader
+    currentLocale={policy.locale}
+    availableLocales={availableLocales}
+    officialLabel={policy.eyebrow}
+    homeLabel={policy.ui.homepage}
+    languageMenuLabel={policy.ui.languageMenu}
+    availableLanguagesLabel={policy.ui.availableLanguages}
+  />
+
+  <main id="main-content">
+    <section class="hero" aria-labelledby="policy-title">
+      <div class="hero__inner">
+        <div>
+          <div class="hero__eyebrow">{policy.eyebrow}</div>
+          <h1 id="policy-title">
+            PongTrace
+            <span>{policy.pageTitle}</span>
+          </h1>
+          <p class="hero__summary">{policy.summary}</p>
+          <div class="hero__meta" aria-label={policy.ui.policyMetadata}>
+            <span class="meta-pill">{policy.effectiveDate}</span>
+            <span class="meta-pill">{policy.version}</span>
+          </div>
+        </div>
+
+        <div class="hero__art" aria-hidden="true">
+          <div class="hero__orbit"></div>
+          <div class="hero__icon-shell">
+            <img src={iconLarge} alt="" width="512" height="512" />
+          </div>
+          <div class="hero__privacy-chip">
+            <strong>Privacy by design</strong>
+            <span>On-device processing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label={policy.ui.privacyHighlights}>
+      <div class="trust-strip__inner">
+        {
+          policy.highlights.map((highlight) => (
+            <div class="trust-item">
+              <span class="trust-item__label">{highlight.label}</span>
+              <span class="trust-item__value">{highlight.value}</span>
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <div class="policy-shell">
+      <section class="flow-panel" aria-labelledby="flow-title">
+        <p class="section-kicker">{policy.ui.flowKicker}</p>
+        <h2 id="flow-title">{policy.ui.flowTitle}</h2>
+        <div class="flow-grid">
+          {
+            policy.flow.map((item) => (
+              <article class="flow-card">
+                <span class="flow-card__step">{item.step}</span>
+                <h3>{item.title}</h3>
+                <p>{item.body}</p>
+              </article>
+            ))
+          }
+        </div>
+      </section>
+
+      <div class="policy-grid">
+        <aside class="policy-toc" aria-label={policy.contentsLabel}>
+          <span class="policy-toc__label">{policy.contentsLabel}</span>
+          <nav>
+            {
+              policy.sections.map((section, index) => (
+                <a href={`#${section.id}`}>
+                  <span class="policy-toc__number">{String(index + 1).padStart(2, '0')}</span>
+                  <span>{section.title}</span>
+                </a>
+              ))
+            }
+            <a href="#website-hosting">
+              <span class="policy-toc__number">{String(policy.sections.length + 1).padStart(2, '0')}</span>
+              <span>{policy.websiteHosting.title}</span>
+            </a>
+            <a href="#contact">
+              <span class="policy-toc__number">{String(policy.sections.length + 2).padStart(2, '0')}</span>
+              <span>{policy.contact.title}</span>
+            </a>
+          </nav>
+        </aside>
+
+        <article class="policy-document">
+          <div class="policy-document__intro">
+            <p>{policy.summary}</p>
+          </div>
+
+          {
+            policy.sections.map((section, index) => (
+              <section class="policy-section" id={section.id}>
+                <div class="policy-section__heading">
+                  <span class="policy-section__number">{String(index + 1).padStart(2, '0')}</span>
+                  <h2>{section.title}</h2>
+                </div>
+                <p>{section.body}</p>
+              </section>
+            ))
+          }
+
+          <section class="hosting-note" id="website-hosting">
+            <h2>{policy.websiteHosting.title}</h2>
+            <p>{policy.websiteHosting.body}</p>
+          </section>
+
+          <section class="contact-card" id="contact">
+            <h2>{policy.contact.title}</h2>
+            <p>{policy.contact.body}</p>
+            <a class="contact-card__link" href={`mailto:${policy.contact.email}`}>
+              {policy.contact.emailLabel} · {policy.contact.email}
+            </a>
+          </section>
+        </article>
+      </div>
+    </div>
+  </main>
+
+  <SiteFooter note={policy.footerNote} htmlLang={policy.htmlLang} />
+
+  <button class="back-to-top" type="button" aria-label={policy.ui.backToTop} data-back-to-top>↑</button>
+
+  <script>
+    const progress = document.querySelector<HTMLElement>('[data-reading-progress]');
+    const backToTop = document.querySelector<HTMLButtonElement>('[data-back-to-top]');
+
+    const updateScrollUI = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
+      progress?.style.setProperty('transform', `scaleX(${ratio})`);
+      backToTop?.setAttribute('data-visible', String(window.scrollY > 620));
+    };
+
+    updateScrollUI();
+    window.addEventListener('scroll', updateScrollUI, { passive: true });
+    backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>
+</BaseLayout>

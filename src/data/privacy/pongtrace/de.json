@@ -1,0 +1,139 @@
+{
+  "appId": "pongtrace",
+  "appName": "PongTrace",
+  "locale": "de",
+  "routeLocale": "de",
+  "htmlLang": "de",
+  "languageLabel": "Deutsch",
+  "pageTitle": "Datenschutzrichtlinie",
+  "eyebrow": "Offizielle Datenschutzrichtlinie",
+  "summary": "Diese Datenschutzerklärung erläutert, wie PongTrace Informationen verarbeitet, zu welchen Zwecken und auf welcher Rechtsgrundlage dies geschieht, wie lange Informationen gespeichert werden, an wen sie weitergegeben werden können, welche Schutzmaßnahmen gelten und welche Wahlmöglichkeiten und Rechte Sie haben. Sie gilt für die aktuelle iOS-Version von PongTrace.",
+  "effectiveDate": "Gültig ab: 25. August 2026",
+  "version": "Version der Richtlinie: 1.0",
+  "contentsLabel": "In dieser Richtlinie",
+  "ui": {
+    "skipToContent": "Zum Inhalt springen",
+    "policyMetadata": "Informationen zur Richtlinie",
+    "privacyHighlights": "Datenschutz im Überblick",
+    "flowKicker": "Datenschutzarchitektur",
+    "flowTitle": "Lokale Verarbeitung und Ihre Kontrolle stehen im Mittelpunkt",
+    "languageMenu": "Sprache auswählen",
+    "availableLanguages": "Verfügbare Sprachen",
+    "homepage": "Startseite der PongTrace-Datenschutzrichtlinie",
+    "backToTop": "Nach oben"
+  },
+  "highlights": [
+    {
+      "label": "Verarbeitung",
+      "value": "Auf Ihrem Gerät"
+    },
+    {
+      "label": "Konto & Cloud",
+      "value": "Kein Konto · Kein Entwicklerserver"
+    },
+    {
+      "label": "Kommerzielles Tracking",
+      "value": "Keine Werbung · Keine Analyse · Kein Tracking"
+    }
+  ],
+  "flow": [
+    {
+      "step": "01",
+      "title": "Sie wählen die Eingabe",
+      "body": "Kamerabilder, Aufnahmen und über Systemauswahl ausgewählte Medien werden nur verarbeitet, wenn Sie die jeweilige Funktion nutzen."
+    },
+    {
+      "step": "02",
+      "title": "Analyse auf dem Gerät",
+      "body": "Posenerkennung, Bewegungsmetriken, intelligente Clips und Vergleiche laufen lokal auf Ihrem iPhone und werden nicht auf einen Entwicklerserver hochgeladen."
+    },
+    {
+      "step": "03",
+      "title": "Sie bestimmen die Ausgabe",
+      "body": "Ergebnisse bleiben im App-Sandboxbereich, sofern Sie sie nicht ausdrücklich speichern, exportieren oder teilen."
+    }
+  ],
+  "sections": [
+    {
+      "id": "current-practices",
+      "title": "Aktuelle Datenschutzpraxis",
+      "body": "Die aktuelle Version erfordert kein Konto und verwendet keinen vom Entwickler betriebenen Server. Sie enthält keine Werbe-, Analyse- oder Tracking-SDKs. PongTrace lädt Ihre Videos, Haltungsdaten oder App-Aktivitäten nicht hoch."
+    },
+    {
+      "id": "controller",
+      "title": "Betreiber und Verantwortlicher",
+      "body": "PongTrace wird von einem unabhängigen Entwickler angeboten. Für personenbezogene Informationen, die der Entwickler unmittelbar erhält, etwa eine Support-E-Mail, ist der Entwickler der Verantwortliche. Videos, Haltungsergebnisse, Projekte und Einstellungen, die ausschließlich auf Ihrem Gerät verbleiben, werden vom Entwickler weder empfangen noch können sie von ihm abgerufen werden."
+    },
+    {
+      "id": "processed-information",
+      "title": "Verarbeitete Informationen",
+      "body": "Mit Ihrer Berechtigung oder Auswahl verarbeitet PongTrace Kamerabilder, aufgenommene oder importierte Videos, Körperhaltungspunkte, Bewegungsmesswerte, Ballwechselsegmente, Vergleichsergebnisse, exportierte Clips und App-Einstellungen. Diese Informationen werden ausschließlich für Aufnahme, Analyse, intelligente Clips, Bewegungsvergleich, Wiedergabe, Export und Einstellungen verwendet."
+    },
+    {
+      "id": "purpose-and-basis",
+      "title": "Zwecke und Rechtsgrundlagen",
+      "body": "Die Kernfunktionen verarbeiten Medien auf Ihrem Gerät und auf Ihre Veranlassung, um die von Ihnen gewählten Funktionen bereitzustellen. Da diese Inhalte nicht an den Entwickler gesendet werden, werden sie vom Entwickler nicht erhoben. Wenn Sie den Entwickler kontaktieren, werden Ihre Kontaktdaten und Ihre Nachricht verarbeitet, soweit dies zur Beantwortung, für Support, zur Wahrung von Rechtsansprüchen oder zur Erfüllung gesetzlicher Pflichten erforderlich ist. Je nach Kontext beruht die Verarbeitung auf der Durchführung Ihrer Anfrage, berechtigten Interessen, einer rechtlichen Verpflichtung oder Ihrer Einwilligung. Eine Einwilligung können Sie jederzeit mit Wirkung für die Zukunft widerrufen."
+    },
+    {
+      "id": "on-device-analysis",
+      "title": "Analyse auf dem Gerät",
+      "body": "Körperhaltungserkennung, intelligente Clips und Bewegungsvergleich laufen auf Ihrem Gerät. MediaPipe Tasks Vision wird als lokale Komponente zur Verarbeitung der Körperhaltung verwendet. PongTrace besitzt keine Funktion, die Ihre Videos oder Haltungsergebnisse über das Netzwerk an MediaPipe, Google, den Entwickler oder einen Analysedienst sendet."
+    },
+    {
+      "id": "permissions",
+      "title": "Berechtigungen und ausgewählte Medien",
+      "body": "Der Kamerazugriff wird nur für die Live-Haltungserkennung und Aufnahme angefordert. Videos werden über die Systemauswahl von Apple aus Fotos und Dateien importiert, sodass Sie selbst auswählen, was importiert wird. Eine Berechtigung zum reinen Hinzufügen zu Fotos wird nur angefordert, wenn ein Ergebnis aufgrund Ihrer Einstellung „Video in Fotos speichern“ oder einer ausdrücklichen Speicheraktion gesichert wird. Berechtigungen können Sie in den iOS-Einstellungen ändern."
+    },
+    {
+      "id": "storage-retention-deletion",
+      "title": "Lokale Speicherung, Aufbewahrung und Löschung",
+      "body": "Trainingsaufnahmen, Haltungsbeispiele, Vergleichsprojekte, exportierte Clips und Einstellungen werden im geschützten App-Bereich auf Ihrem Gerät gespeichert. Sie bleiben dort, bis Sie sie über verfügbare App-Funktionen oder durch Löschen der App entfernen. In Fotos, Dateien oder einem anderen Dienst gespeicherte Kopien müssen dort separat gelöscht werden. Beim Importieren oder Verarbeiten von Videos kann die App vorübergehende Arbeitskopien erstellen."
+    },
+    {
+      "id": "security",
+      "title": "Datensicherheit",
+      "body": "PongTrace begrenzt die Verarbeitung durch den Betrieb auf dem Gerät, die iOS-App-Sandbox, Apples Berechtigungssteuerung und Datenminimierung. Keine Speicher- oder Übertragungsmethode ist vollständig sicher. Sie sind für den Schutz des Gerätecodes, Ihrer Sicherungen und der außerhalb der App exportierten Kopien verantwortlich. Erhält der Entwickler Support-Nachrichten, werden angemessene Maßnahmen getroffen, um den Zugriff zu beschränken und sie nur so lange wie erforderlich aufzubewahren."
+    },
+    {
+      "id": "sharing-and-support",
+      "title": "Von Ihnen veranlasste Freigabe und Support",
+      "body": "PongTrace gibt Inhalte nur außerhalb der App weiter, wenn Sie das Speichern in Fotos, den Export, das Teilen-Menü oder die Kontaktaufnahme mit dem Entwickler auswählen. Die Ziel-App oder der Zieldienst verarbeitet die Informationen nach den eigenen Datenschutzbestimmungen. Wenn Sie dem Entwickler eine E-Mail senden, werden Ihre E-Mail-Adresse und Nachricht zur Beantwortung Ihrer Anfrage verwendet und nur so lange aufbewahrt, wie dies für Support, Streitbeilegung oder rechtliche Pflichten angemessen erforderlich ist."
+    },
+    {
+      "id": "third-parties",
+      "title": "Drittanbieter und internationale Übermittlungen",
+      "body": "MediaPipe Tasks Vision ist für die Haltungsverarbeitung auf dem Gerät eingebunden; durch diese Einbindung werden Ihre Medien oder Haltungsergebnisse nicht an Google gesendet. Apples Systemauswahl, Fotos, Dateien und das Teilen-Menü unterliegen den Bedingungen von Apple und des von Ihnen ausgewählten Ziels. PongTrace verkauft oder vermietet keine personenbezogenen Informationen, und die aktuelle Version veranlasst keine internationale Übermittlung Ihrer auf dem Gerät gespeicherten Inhalte. Informationen, die Sie freiwillig per E-Mail oder über einen anderen Dienst senden, können an den von diesem Dienst genutzten Standorten nach dessen eigener Richtlinie verarbeitet werden."
+    },
+    {
+      "id": "advertising-and-analytics",
+      "title": "Werbung und Analyse",
+      "body": "Die aktuelle Version enthält kein Werbe-, Analyse- oder Tracking-SDK. Bevor eine zukünftige Version Google AdMob oder einen anderen datenerhebenden Dienst einbindet, werden diese Richtlinie und die Datenschutzangaben im App Store aktualisiert und die betreffenden Datenkategorien, Zwecke und Empfänger benannt. Soweit gesetzlich erforderlich, werden vor Beginn der Werbeverarbeitung eine Einwilligung sowie eine Möglichkeit zum Ändern oder Widerrufen der Auswahl angeboten."
+    },
+    {
+      "id": "children",
+      "title": "Datenschutz von Kindern",
+      "body": "PongTrace ist ein allgemeines Sportwerkzeug und nicht darauf ausgelegt, personenbezogene Informationen von Kindern anzufordern. Die aktuelle Version besitzt weder Konto, Werbung, Tracking noch eine Online-Erfassung. Minderjährige sollten die App, soweit erforderlich, unter Mitwirkung eines Elternteils oder Erziehungsberechtigten verwenden. Glaubt ein Elternteil oder Erziehungsberechtigter, dass ein Kind dem Entwickler personenbezogene Informationen gesendet hat, kann er die Löschung beim Entwickler verlangen."
+    },
+    {
+      "id": "rights-and-choices",
+      "title": "Datenschutzoptionen und gesetzliche Rechte",
+      "body": "Sie können Berechtigungen in den iOS-Einstellungen ablehnen oder widerrufen, Inhalte über verfügbare App-Funktionen löschen oder die App löschen, um deren geschützte Daten zu entfernen. Je nach anwendbarem Recht können Sie bezüglich der vom Entwickler kontrollierten personenbezogenen Informationen Auskunft, Berichtigung, Löschung, Einschränkung, Widerspruch oder Datenübertragbarkeit verlangen, eine Einwilligung widerrufen und sich bei einer zuständigen Datenschutzaufsichtsbehörde beschweren. Da der Entwickler Ihre Gerätedaten nicht erhält, verwalten Sie diese unmittelbar auf Ihrem Gerät. Anfragen zu unmittelbar erhaltenen Informationen richten Sie per E-Mail an den Entwickler; vor der Bearbeitung kann eine angemessene Identitätsprüfung erforderlich sein."
+    },
+    {
+      "id": "policy-changes",
+      "title": "Änderungen dieser Richtlinie",
+      "body": "Diese Richtlinie kann geändert werden, wenn sich Funktionen, Rechtsanforderungen oder Datenpraktiken ändern. Die neue Fassung erhält ein aktualisiertes Gültigkeitsdatum. Über wesentliche Änderungen wird vor oder bei deren Inkrafttreten in angemessener Weise informiert, etwa in der App, in Versionshinweisen oder auf der veröffentlichten Richtlinienseite. Ältere Fassungen werden soweit sinnvoll zu Nachweiszwecken aufbewahrt."
+    }
+  ],
+  "contact": {
+    "title": "Entwickler- und Datenschutzkontakt",
+    "body": "Der unabhängige Entwickler von PongTrace ist die Anlaufstelle für Datenschutzfragen und für unmittelbar erhaltene personenbezogene Informationen der Verantwortliche. Verwenden Sie die folgende E-Mail-Adresse für Datenschutzfragen oder Anträge. Vor der Bearbeitung kann eine angemessene Identitätsprüfung erforderlich sein.",
+    "emailLabel": "E-Mail senden",
+    "email": "forray2023@163.com"
+  },
+  "websiteHosting": {
+    "title": "Hosting dieser Datenschutzseite",
+    "body": "Diese Seite wird über GitHub Pages bereitgestellt. Beim Aufruf kann GitHub Ihre IP-Adresse und erforderliche technische Protokolle verarbeiten, um die Seite auszuliefern, zu schützen und Missbrauch zu verhindern. Dafür ist GitHub nach seiner eigenen Datenschutzerklärung verantwortlich; diese Verarbeitung ist von der lokalen Verarbeitung in PongTrace getrennt. Diese Seite verwendet keine vom Entwickler eingerichteten Analyse-, Werbe- oder Tracking-Skripte und kein Cookie-Banner."
+  },
+  "footerNote": "Offizielle Datenschutzrichtlinie · Das auf dieser Seite angegebene Datum kennzeichnet die aktuelle Fassung"
+}

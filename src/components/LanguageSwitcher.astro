@@ -1,0 +1,27 @@
+---
+import { LOCALES, privacyPath } from '../config/site';
+
+interface Props {
+  currentLocale: string;
+  availableLocales: string[];
+  menuLabel: string;
+  availableLabel: string;
+}
+
+const { currentLocale, availableLocales, menuLabel, availableLabel } = Astro.props;
+const current = LOCALES.find((locale) => locale.code === currentLocale) ?? LOCALES[0];
+const available = LOCALES.filter((locale) => availableLocales.includes(locale.code));
+---
+
+<details class="language-switcher">
+  <summary aria-label={menuLabel}>{current.shortLabel}</summary>
+  <nav class="language-switcher__menu" aria-label={availableLabel}>
+    {
+      available.map((locale) => (
+        <a href={privacyPath(locale.code)} lang={locale.htmlLang} aria-current={locale.code === currentLocale ? 'page' : undefined}>
+          {locale.label}
+        </a>
+      ))
+    }
+  </nav>
+</details>

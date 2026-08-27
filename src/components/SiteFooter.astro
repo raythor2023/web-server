@@ -1,0 +1,18 @@
+---
+interface Props {
+  note: string;
+  htmlLang: string;
+}
+
+const { note, htmlLang } = Astro.props;
+---
+
+<footer class="site-footer" lang={htmlLang}>
+  <div class="site-footer__inner">
+    <div class="site-footer__brand">
+      <strong>PongTrace</strong>
+      <span>{note}</span>
+    </div>
+    <div class="site-footer__meta">© {new Date().getFullYear()} PongTrace Independent Developer</div>
+  </div>
+</footer>

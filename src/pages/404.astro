@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { privacyPath } from '../config/site';
+
+const destination = privacyPath('zh-Hans');
+---
+
+<BaseLayout
+  title="Page not found · PongTrace"
+  description="The requested PongTrace page could not be found."
+  lang="en"
+  skipLabel="Skip to content"
+>
+  <main id="main-content" class="error-page">
+    <div class="error-page__card">
+      <span class="error-page__code">404</span>
+      <p class="section-kicker">PongTrace</p>
+      <h1>Page not found</h1>
+      <p>The address may have changed. Continue to the current PongTrace Privacy Policy.</p>
+      <a href={destination}>View Privacy Policy</a>
+    </div>
+  </main>
+</BaseLayout>

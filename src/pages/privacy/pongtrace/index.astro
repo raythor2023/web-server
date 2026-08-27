@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import PrivacyPolicyPage from '../../../components/PrivacyPolicyPage.astro';
+import { DEFAULT_LOCALE } from '../../../config/site';
+
+const policies = await getCollection('privacy');
+const entry = policies.find(
+  ({ data }) => data.appId === 'pongtrace' && data.locale === DEFAULT_LOCALE,
+);
+
+if (!entry) {
+  throw new Error(`Missing PongTrace privacy policy for ${DEFAULT_LOCALE}`);
+}
+
+const availableLocales = policies
+  .filter(({ data }) => data.appId === 'pongtrace')
+  .map(({ data }) => data.locale);
+---
+
+<PrivacyPolicyPage policy={entry.data} availableLocales={availableLocales} />

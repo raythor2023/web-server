@@ -1,0 +1,44 @@
+---
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
+interface Props {
+  currentLocale: string;
+  availableLocales: string[];
+  officialLabel: string;
+  homeLabel: string;
+  languageMenuLabel: string;
+  availableLanguagesLabel: string;
+}
+
+const {
+  currentLocale,
+  availableLocales,
+  officialLabel,
+  homeLabel,
+  languageMenuLabel,
+  availableLanguagesLabel,
+} = Astro.props;
+const iconPath = `${import.meta.env.BASE_URL}images/pongtrace/app-icon-192.png`;
+---
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href={`${import.meta.env.BASE_URL}privacy/pongtrace/`} aria-label={homeLabel}>
+      <span class="brand__mark"><img src={iconPath} alt="" width="42" height="42" /></span>
+      <span class="brand__text">
+        <span class="brand__name">PongTrace</span>
+        <span class="brand__descriptor">Performance Intelligence</span>
+      </span>
+    </a>
+
+    <div class="header-actions">
+      <span class="official-badge">{officialLabel}</span>
+      <LanguageSwitcher
+        currentLocale={currentLocale}
+        availableLocales={availableLocales}
+        menuLabel={languageMenuLabel}
+        availableLabel={availableLanguagesLabel}
+      />
+    </div>
+  </div>
+</header>
