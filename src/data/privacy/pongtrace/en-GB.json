@@ -7,9 +7,9 @@
   "languageLabel": "English (UK)",
   "pageTitle": "Privacy Policy",
   "eyebrow": "Official Privacy Policy",
-  "summary": "This Privacy Policy explains how PongTrace processes information, the purposes and legal grounds for processing, retention and deletion, disclosures, security measures, and the choices and rights available to you. It applies to the current iOS version of PongTrace.",
-  "effectiveDate": "Effective date: 28 August 2026",
-  "version": "Policy version: 1.1",
+  "summary": "PongTrace processes videos and movement data primarily on your device. No account, developer server, ads, analytics or tracking.",
+  "effectiveDate": "Effective date: 30 August 2026",
+  "version": "Policy version: 1.2",
   "contentsLabel": "In this policy",
   "ui": {
     "skipToContent": "Skip to policy",
@@ -24,11 +24,11 @@
   },
   "highlights": [
     {
-      "label": "Processing",
+      "label": "Processing location",
       "value": "On your device"
     },
     {
-      "label": "Accounts & cloud",
+      "label": "Account and cloud",
       "value": "No account · No developer server"
     },
     {
@@ -40,100 +40,89 @@
     {
       "step": "01",
       "title": "You choose the input",
-      "body": "Camera frames, recordings, and media selected through system pickers are processed only when you use the related feature."
+      "body": "Camera frames, recordings and selected media are processed only when you actively use the relevant feature."
     },
     {
       "step": "02",
-      "title": "Analysis stays on device",
-      "body": "Pose detection, movement metrics, smart clips, and comparisons run locally on your iPhone and are not uploaded to a developer server."
+      "title": "Processing stays on device",
+      "body": "Pose detection, movement metrics, rally montages and movement comparison run locally on your iPhone."
     },
     {
       "step": "03",
-      "title": "You control the output",
-      "body": "Results stay in the app sandbox unless you explicitly save, export, or share them."
+      "title": "You choose when data leaves",
+      "body": "Content leaves PongTrace only when you actively save, export, share or send email."
     }
   ],
   "sections": [
     {
       "id": "current-practices",
       "title": "Current privacy practices",
-      "body": "The current version does not require an account and does not use a developer-operated server. It contains no advertising, analytics, or tracking SDKs. PongTrace does not upload your videos, pose data, or app activity."
+      "body": "The current version requires no account, uses no developer-operated server and contains no advertising, analytics or tracking. PongTrace does not upload your videos, pose data or app activity."
     },
     {
-      "id": "controller",
-      "title": "Operator and data controller",
-      "body": "PongTrace is provided by an independent developer. The developer is the data controller only for personal information received directly, such as a support email. Videos, pose results, projects, and settings kept solely on your device are not received by or accessible to the developer."
+      "id": "operator-and-scope",
+      "title": "Operator and scope of control",
+      "body": "PongTrace is operated by an independent individual developer. Videos, pose results, training projects and settings stored only on your device are not received by or accessible to the developer. The developer directly receives an email address and message content only when you choose to send feedback, and uses them to handle your request."
     },
     {
-      "id": "processed-information",
+      "id": "information-processed",
       "title": "Information processed",
-      "body": "With your permission or selection, PongTrace processes camera frames; recorded or imported videos; body pose landmarks; movement metrics; rally segments; comparison results; exported clips; and app settings. This information is used only to provide recording, analysis, smart clipping, action comparison, playback, export, and preference features."
+      "body": "With your permission or selection, PongTrace processes camera frames, recorded or imported videos, body-pose keypoints, movement metrics, rally segments, action-comparison results, exported clips and app settings. This information is used only to provide recording, analysis, rally compilation, action comparison, playback, export and preference features. It is not used to identify or verify you."
     },
     {
-      "id": "purpose-and-basis",
+      "id": "purposes-and-legal-bases",
       "title": "Purposes and legal bases",
-      "body": "Core features process media locally at your request to provide the functionality you choose. Because this on-device content is not sent to the developer, it is not collected by the developer. If you contact the developer, your contact details and message are processed as needed to answer your request, provide support, protect legal claims, or comply with law. Depending on the context, the legal basis is performance of your request, the developer’s legitimate interests, compliance with a legal obligation, or your consent. Where processing relies on consent, you may withdraw it at any time for future processing."
+      "body": "Core features process media on your device in response to your actions to provide the functions you choose to use. If you send feedback, the developer processes the email address and message only as needed to respond, provide support, protect legitimate interests or meet legal obligations. Depending on the circumstances, the legal basis may be fulfilling your request, the developer’s legitimate interests, a legal obligation or your consent."
     },
     {
-      "id": "on-device-analysis",
-      "title": "On-device analysis",
-      "body": "Pose detection, smart clipping, and action comparison run on your device. MediaPipe Tasks Vision is used as an on-device pose-processing component. PongTrace does not implement a network path that sends your videos or pose results to MediaPipe, Google, the developer, or an analytics service. Pose landmarks and movement metrics are not used to identify or authenticate you."
+      "id": "on-device-processing",
+      "title": "On-device processing",
+      "body": "Pose recognition, movement-metric calculation, rally compilation analysis and action comparison run on your device. PongTrace has no feature that sends videos, pose keypoints or movement metrics to a developer server, advertising service or analytics service."
     },
     {
-      "id": "permissions",
+      "id": "permissions-and-selected-media",
       "title": "Permissions and selected media",
-      "body": "Camera access is requested only for live pose detection and recording. Videos are imported from Photos and Files through Apple’s system pickers, so you choose what to import. Add-only Photos access is requested only when saving a result under your Save to Photos setting or an explicit save action. You can change permissions in iOS Settings."
+      "body": "PongTrace requests camera access only for live recognition and recording. When you import a video through an Apple system picker, you decide which content to select. Add-only Photos access is requested only when you save a result to Photos. You can change these permissions at any time in iOS Settings."
     },
     {
       "id": "storage-retention-deletion",
-      "title": "Local storage, retention, and deletion",
-      "body": "Training recordings, pose samples, comparison projects, exported clips, and preferences are stored in the app’s sandbox on your device. They remain until you delete them using available app controls or delete the app. Copies saved to Photos, Files, or another service must be deleted from that destination separately. The app may create temporary working copies while importing or processing video."
+      "title": "Local storage, retention and deletion",
+      "body": "Training recordings, pose samples, action-comparison projects, exported clips and preferences are stored in the app sandbox until you delete them with available in-app controls or delete the app. Temporary working files may be created while media is processed. Copies saved to Photos, Files or another destination must be deleted separately at that destination."
+    },
+    {
+      "id": "sharing-and-external-services",
+      "title": "Sharing and external services",
+      "body": "Content leaves PongTrace only when you actively save to Photos or Files, export, use the system share sheet or send email. The destination app or service processes information under its own policy; an email provider may process information you choose to send in the regions where it operates. PongTrace does not upload local device content or initiate cross-border transfers of that content."
     },
     {
       "id": "security",
       "title": "Data security",
-      "body": "PongTrace limits processing through on-device operation, the iOS app sandbox, Apple permission controls, and data minimisation. No storage or transmission method is completely secure. You are responsible for protecting your device passcode, backups, and copies exported outside the app. If the developer receives support correspondence, reasonable measures are used to restrict access and retain it only as needed."
-    },
-    {
-      "id": "sharing-and-support",
-      "title": "User-directed sharing and support",
-      "body": "PongTrace sends content outside the app only when you choose to save to Photos, export, use the share sheet, or contact the developer. A destination app or service handles the information under its own privacy terms. If you email the developer, your email address and message are used to respond to your request and retained only as reasonably needed for support, dispute resolution, or legal obligations."
-    },
-    {
-      "id": "third-parties",
-      "title": "Third-party services and international transfers",
-      "body": "MediaPipe Tasks Vision is integrated for on-device pose processing; this integration does not send your media or pose results to Google. Apple system pickers, Photos, Files, and the share sheet operate under Apple’s and the selected destination’s terms. PongTrace does not sell or rent personal information, and the current version does not initiate an international transfer of your on-device content. Information you voluntarily send through email or another service may be processed in locations used by that service under its own policy."
+      "body": "PongTrace limits processing through on-device operation, the iOS app sandbox, Apple system permission controls and data minimisation. No storage or transmission method can guarantee absolute security. Protect your device passcode, backups and copies exported outside the app."
     },
     {
       "id": "advertising-and-analytics",
-      "title": "Advertising and analytics",
-      "body": "The current version contains no advertising, analytics, or tracking SDK and does not use personal information for advertising or tracking. If these practices change, this policy and the App Store privacy disclosures will be updated before the revised processing begins. Where legally required, consent and a way to change or withdraw privacy choices will be provided."
+      "title": "Advertising, analytics and tracking",
+      "body": "The current version contains no advertising, analytics or tracking features and does not use personal information for advertising or tracking. If these practices change, PongTrace will update this policy and its App Store privacy disclosures before the new processing begins and will obtain consent where required by law."
     },
     {
       "id": "children",
       "title": "Children’s privacy",
-      "body": "PongTrace is a general-purpose sports utility and is not designed to solicit personal information from children. The current version has no account, advertising, tracking, or online collection flow. A minor should use the app with parent or guardian involvement where required. If a parent or guardian believes a child has sent personal information to the developer, contact the developer to request deletion."
+      "body": "PongTrace is a general-purpose sports tool and is not designed to actively collect personal information from children. The current version has no account, advertising, tracking or online content-collection flow. Where required by law, children should use the app with a parent or guardian involved."
     },
     {
       "id": "rights-and-choices",
       "title": "Privacy choices and legal rights",
-      "body": "You can decline or revoke permissions in iOS Settings, delete content using available app controls, or delete the app to remove its sandboxed data. Depending on applicable law, you may request access, correction, deletion, restriction, objection, or portability for personal information controlled by the developer, withdraw consent, and lodge a complaint with a competent data protection authority. Because the developer does not receive your on-device data, you manage that data directly on your device. Email the developer about information received directly; reasonable identity verification may be required before a request is fulfilled."
+      "body": "You can refuse or withdraw permissions in iOS Settings, delete content using in-app controls or delete the app to remove its sandbox data. Because the developer does not receive on-device data, you manage that data directly on the device. For information you voluntarily provide in feedback and the developer receives directly, use Settings > Contact & Feedback in the app to make any access, correction, deletion, restriction or other request available under applicable law. Reasonable identity verification may be required."
     },
     {
       "id": "policy-changes",
       "title": "Changes to this policy",
-      "body": "This policy may be updated when features, legal requirements, or data practices change. A revised policy will carry a new effective date. Material changes will be communicated in an appropriate manner before or when they take effect, such as in the app, release notes, or the published policy page. Previous versions will be retained where reasonably practical for reference."
+      "body": "This policy may be updated when features, legal requirements or data practices change. A revision will show a new policy version and effective date. Material changes will be communicated through the app, release notes or this page as appropriate."
     }
   ],
-  "contact": {
-    "title": "Developer and privacy contact",
-    "body": "The independent developer of PongTrace is the privacy contact and, for personal information received directly, the data controller. Use the email below for privacy questions or requests. Reasonable identity verification may be required before a request is fulfilled.",
-    "emailLabel": "Send email",
-    "email": "forray2023@163.com"
-  },
   "websiteHosting": {
     "title": "Hosting of this privacy page",
-    "body": "This page is delivered through GitHub Pages. When you visit it, GitHub may process your IP address and necessary technical logs to deliver and secure the site and prevent abuse. GitHub is responsible for that processing under its own privacy statement; it is separate from PongTrace’s on-device processing. This page uses no developer-installed analytics, advertising, cookie banner, or tracker."
+    "body": "This page is delivered through GitHub Pages. GitHub may process your IP address and necessary technical logs to deliver and secure the site and prevent abuse. GitHub is responsible for that processing under its own policy; it is separate from PongTrace’s on-device processing. This page uses no developer-installed analytics, advertising or trackers."
   },
   "footerNote": "Official Privacy Policy · The effective date shown on this page identifies the current version"
 }

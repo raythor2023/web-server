@@ -88,8 +88,6 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .policy-section h2 { margin: 0; color: var(--ink-950); font-size: clamp(20px, 2.5vw, 25px); font-weight: 710; letter-spacing: -0.025em; line-height: 1.35; }
 .policy-section p { margin: 0; color: var(--ink-650); font-size: 15px; line-height: 1.94; }
 .policy-section--supplement { margin-top: 18px; }
-.policy-section--contact { margin-top: 18px; padding: 38px 0; border-top: 1px solid var(--line-strong); border-bottom: 1px solid var(--line-strong); }
-.contact-link { display: inline-flex; margin-top: 18px; color: var(--blue); font-size: 15px; font-weight: 680; border-bottom: 1px solid rgba(8, 123, 193, 0.28); }
 
 .site-footer { color: var(--ink-650); background: var(--paper); border-top: 1px solid var(--line); }
 .site-footer__inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; width: min(calc(100% - 40px), var(--content-width)); margin: 0 auto; padding: 34px 0 38px; }

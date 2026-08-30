@@ -87,10 +87,6 @@ const alternateLocales = LOCALES.filter((locale) => availableLocales.includes(lo
               <span class="policy-toc__number">{String(policy.sections.length + 1).padStart(2, '0')}</span>
               <span>{policy.websiteHosting.title}</span>
             </a>
-            <a href="#contact">
-              <span class="policy-toc__number">{String(policy.sections.length + 2).padStart(2, '0')}</span>
-              <span>{policy.contact.title}</span>
-            </a>
           </nav>
         </aside>
 
@@ -113,17 +109,6 @@ const alternateLocales = LOCALES.filter((locale) => availableLocales.includes(lo
               <h2>{policy.websiteHosting.title}</h2>
             </div>
             <p>{policy.websiteHosting.body}</p>
-          </section>
-
-          <section class="policy-section policy-section--contact" id="contact">
-            <div class="policy-section__heading">
-              <span class="policy-section__number">{String(policy.sections.length + 2).padStart(2, '0')}</span>
-              <h2>{policy.contact.title}</h2>
-            </div>
-            <p>{policy.contact.body}</p>
-            <a class="contact-link" href={`mailto:${policy.contact.email}`}>
-              {policy.contact.email}
-            </a>
           </section>
         </article>
       </div>

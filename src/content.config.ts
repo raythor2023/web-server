@@ -48,12 +48,6 @@ const privacy = defineCollection({
         body: z.string(),
       }),
     ),
-    contact: z.object({
-      title: z.string(),
-      body: z.string(),
-      emailLabel: z.string(),
-      email: z.email(),
-    }),
     websiteHosting: z.object({
       title: z.string(),
       body: z.string(),
