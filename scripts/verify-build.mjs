@@ -13,9 +13,21 @@ const routes = [
 ];
 
 const requiredPolicyFacts = [
-  'MediaPipe Tasks Vision',
-  'forray2023@163.com',
+  '1.2',
   'GitHub Pages',
+  'id="current-practices"',
+  'id="storage-retention-deletion"',
+  'id="sharing-and-external-services"',
+  'id="rights-and-choices"',
+  'id="website-hosting"',
+];
+
+const forbiddenPolicyFacts = [
+  'MediaPipe',
+  'forray2023@163.com',
+  'mailto:',
+  'Apache',
+  'id="contact"',
 ];
 
 for (const route of routes) {
@@ -34,6 +46,12 @@ for (const route of routes) {
   for (const fact of requiredPolicyFacts) {
     if (!html.includes(fact)) {
       throw new Error(`${route} is missing required policy fact: ${fact}`);
+    }
+  }
+
+  for (const fact of forbiddenPolicyFacts) {
+    if (html.includes(fact)) {
+      throw new Error(`${route} contains forbidden policy detail: ${fact}`);
     }
   }
 
