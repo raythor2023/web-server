@@ -1,0 +1,61 @@
+{
+  "appId": "pongtrace",
+  "appName": "PongTrace",
+  "locale": "en",
+  "routeLocale": "en",
+  "htmlLang": "en-US",
+  "languageLabel": "English (US)",
+  "pageTitle": "PongTrace Support",
+  "eyebrow": "Official Product Support",
+  "summary": "Find help with PongTrace features, permissions, and common issues, or contact the developer directly by email.",
+  "contact": {
+    "title": "Contact PongTrace Support",
+    "body": "Email us if you need help, want to share feedback, or have a feature request. This address is monitored by the PongTrace developer for product support.",
+    "emailLabel": "Support email",
+    "emailAddress": "forray2023@163.com"
+  },
+  "faqTitle": "Frequently asked questions",
+  "faqs": [
+    {
+      "id": "import-video",
+      "question": "How do I import a video from Photos or Files?",
+      "answer": "Open the relevant video analysis feature and choose a video with the Apple system picker. PongTrace processes only the item you select."
+    },
+    {
+      "id": "permissions",
+      "question": "Why does PongTrace request Camera or Photos access?",
+      "answer": "Camera access is used only for live pose detection and training recording. Add-only Photos access is requested only when you choose to save a result to Photos. You can change permissions in iOS Settings."
+    },
+    {
+      "id": "local-processing",
+      "question": "Does PongTrace upload my videos or movement data?",
+      "answer": "No. The current version requires no account and uses no developer server. Videos, pose landmarks, movement metrics, rally clips, and action comparisons are processed on your device."
+    },
+    {
+      "id": "save-export-delete",
+      "question": "How do I save, export, or delete content?",
+      "answer": "Use the available in-app controls to save, export, or delete training content. Deleting the app removes its sandboxed data. Copies saved to Photos, Files, or another destination must be deleted there separately."
+    },
+    {
+      "id": "troubleshooting",
+      "question": "What should I do if a feature is not working?",
+      "answer": "First reopen the app, confirm the relevant permissions are enabled, and check that your device has enough storage. If the issue continues, contact us at the support email."
+    }
+  ],
+  "privacy": {
+    "title": "Privacy and data",
+    "body": "Learn how PongTrace handles videos, pose data, permissions, and local storage.",
+    "linkLabel": "View the PongTrace Privacy Policy"
+  },
+  "contactGuidance": {
+    "title": "Before you contact us",
+    "body": "Please include the PongTrace version, iOS version, iPhone model, affected feature, and steps to reproduce the issue. Add a screenshot if helpful. Do not send private videos or sensitive personal information unless necessary."
+  },
+  "ui": {
+    "skipToContent": "Skip to content",
+    "languageMenu": "Choose language",
+    "availableLanguages": "Available languages",
+    "homepage": "PongTrace Support home"
+  },
+  "footerNote": "Official PongTrace support · Product help and feedback"
+}

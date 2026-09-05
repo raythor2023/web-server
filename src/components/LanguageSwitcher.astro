@@ -1,14 +1,16 @@
 ---
-import { LOCALES, privacyPath } from '../config/site';
+import { LOCALES, localizedProductPath } from '../config/site';
 
 interface Props {
   currentLocale: string;
   availableLocales: string[];
   menuLabel: string;
   availableLabel: string;
+  section: 'privacy' | 'support';
+  appId: string;
 }
 
-const { currentLocale, availableLocales, menuLabel, availableLabel } = Astro.props;
+const { currentLocale, availableLocales, menuLabel, availableLabel, section, appId } = Astro.props;
 const current = LOCALES.find((locale) => locale.code === currentLocale) ?? LOCALES[0];
 const available = LOCALES.filter((locale) => availableLocales.includes(locale.code));
 ---
@@ -18,7 +20,11 @@ const available = LOCALES.filter((locale) => availableLocales.includes(locale.co
   <nav class="language-switcher__menu" aria-label={availableLabel}>
     {
       available.map((locale) => (
-        <a href={privacyPath(locale.code)} lang={locale.htmlLang} aria-current={locale.code === currentLocale ? 'page' : undefined}>
+        <a
+          href={localizedProductPath(section, appId, locale.code)}
+          lang={locale.htmlLang}
+          aria-current={locale.code === currentLocale ? 'page' : undefined}
+        >
           {locale.label}
         </a>
       ))

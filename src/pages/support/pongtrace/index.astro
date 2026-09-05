@@ -1,0 +1,20 @@
+---
+import { getCollection } from 'astro:content';
+import SupportPage from '../../../components/SupportPage.astro';
+import { DEFAULT_LOCALE } from '../../../config/site';
+
+const supportEntries = await getCollection('support');
+const entry = supportEntries.find(
+  ({ data }) => data.appId === 'pongtrace' && data.locale === DEFAULT_LOCALE,
+);
+
+if (!entry) {
+  throw new Error(`Missing PongTrace support page for ${DEFAULT_LOCALE}`);
+}
+
+const availableLocales = supportEntries
+  .filter(({ data }) => data.appId === 'pongtrace')
+  .map(({ data }) => data.locale);
+---
+
+<SupportPage support={entry.data} availableLocales={availableLocales} />

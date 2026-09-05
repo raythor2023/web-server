@@ -8,6 +8,9 @@ interface Props {
   homeLabel: string;
   languageMenuLabel: string;
   availableLanguagesLabel: string;
+  homeHref: string;
+  section: 'privacy' | 'support';
+  appId: string;
 }
 
 const {
@@ -17,13 +20,16 @@ const {
   homeLabel,
   languageMenuLabel,
   availableLanguagesLabel,
+  homeHref,
+  section,
+  appId,
 } = Astro.props;
 const iconPath = `${import.meta.env.BASE_URL}images/pongtrace/app-icon-192.png`;
 ---
 
 <header class="site-header">
   <div class="site-header__inner">
-    <a class="brand" href={`${import.meta.env.BASE_URL}privacy/pongtrace/`} aria-label={homeLabel}>
+    <a class="brand" href={homeHref} aria-label={homeLabel}>
       <span class="brand__mark"><img src={iconPath} alt="" width="42" height="42" /></span>
       <span class="brand__text">
         <span class="brand__name">PongTrace</span>
@@ -38,6 +44,8 @@ const iconPath = `${import.meta.env.BASE_URL}images/pongtrace/app-icon-192.png`;
         availableLocales={availableLocales}
         menuLabel={languageMenuLabel}
         availableLabel={availableLanguagesLabel}
+        section={section}
+        appId={appId}
       />
     </div>
   </div>

@@ -1,0 +1,104 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteFooter from './SiteFooter.astro';
+import SiteHeader from './SiteHeader.astro';
+import { LOCALES, privacyPath, productLinkLabels, supportPath } from '../config/site';
+
+type SupportData = CollectionEntry<'support'>['data'];
+
+interface Props {
+  support: SupportData;
+  availableLocales: string[];
+}
+
+const { support, availableLocales } = Astro.props;
+const iconLarge = `${import.meta.env.BASE_URL}images/pongtrace/app-icon-512.png`;
+const alternateLocales = LOCALES.filter((locale) => availableLocales.includes(locale.code)).map(
+  (locale) => ({ lang: locale.htmlLang, href: supportPath(locale.code) }),
+);
+const linkLabels = productLinkLabels(support.locale);
+const emailHref = `mailto:${support.contact.emailAddress}?subject=${encodeURIComponent('PongTrace Support')}`;
+---
+
+<BaseLayout
+  title={`${support.pageTitle} · PongTrace`}
+  description={support.summary}
+  lang={support.htmlLang}
+  skipLabel={support.ui.skipToContent}
+  alternateLocales={alternateLocales}
+  xDefaultPath={supportPath('zh-Hans')}
+>
+  <SiteHeader
+    currentLocale={support.locale}
+    availableLocales={availableLocales}
+    officialLabel={support.eyebrow}
+    homeLabel={support.ui.homepage}
+    languageMenuLabel={support.ui.languageMenu}
+    availableLanguagesLabel={support.ui.availableLanguages}
+    homeHref={supportPath(support.locale)}
+    section="support"
+    appId={support.appId}
+  />
+
+  <main id="main-content" class="support-page">
+    <section class="support-intro" aria-labelledby="support-title">
+      <div class="support-intro__inner">
+        <div class="legal-intro__identity">
+          <img src={iconLarge} alt="" width="64" height="64" />
+          <div>
+            <span>{support.appName}</span>
+            <span>{support.eyebrow}</span>
+          </div>
+        </div>
+        <h1 id="support-title">{support.pageTitle}</h1>
+        <p>{support.summary}</p>
+      </div>
+    </section>
+
+    <div class="support-shell">
+      <section class="support-contact" aria-labelledby="contact-support">
+        <div>
+          <p class="section-kicker">{support.contact.emailLabel}</p>
+          <h2 id="contact-support">{support.contact.title}</h2>
+          <p>{support.contact.body}</p>
+        </div>
+        <a class="support-email" href={emailHref}>{support.contact.emailAddress}</a>
+      </section>
+
+      <div class="support-grid">
+        <section id="frequently-asked-questions" class="support-faq" aria-labelledby="faq-title">
+          <h2 id="faq-title">{support.faqTitle}</h2>
+          <div class="support-faq__list">
+            {
+              support.faqs.map((faq) => (
+                <article id={faq.id}>
+                  <h3>{faq.question}</h3>
+                  <p>{faq.answer}</p>
+                </article>
+              ))
+            }
+          </div>
+        </section>
+
+        <aside class="support-aside">
+          <section class="support-note">
+            <h2>{support.contactGuidance.title}</h2>
+            <p>{support.contactGuidance.body}</p>
+          </section>
+          <section class="support-note">
+            <h2>{support.privacy.title}</h2>
+            <p>{support.privacy.body}</p>
+            <a href={privacyPath(support.locale)}>{support.privacy.linkLabel}</a>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <SiteFooter
+    note={support.footerNote}
+    htmlLang={support.htmlLang}
+    links={[{ href: privacyPath(support.locale), label: linkLabels.privacy }]}
+  />
+</BaseLayout>

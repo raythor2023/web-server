@@ -1,0 +1,61 @@
+{
+  "appId": "pongtrace",
+  "appName": "PongTrace",
+  "locale": "ko",
+  "routeLocale": "ko",
+  "htmlLang": "ko",
+  "languageLabel": "한국어",
+  "pageTitle": "PongTrace 지원",
+  "eyebrow": "공식 제품 지원",
+  "summary": "PongTrace 기능, 권한 및 일반적인 문제에 대한 도움말을 확인하거나 개발자에게 이메일로 직접 문의할 수 있습니다.",
+  "contact": {
+    "title": "PongTrace 지원 문의",
+    "body": "도움이 필요하거나 의견 또는 기능 제안이 있으면 이메일을 보내 주세요. 이 주소는 PongTrace 개발자가 제품 지원 요청을 처리하는 데 사용합니다.",
+    "emailLabel": "지원 이메일",
+    "emailAddress": "forray2023@163.com"
+  },
+  "faqTitle": "자주 묻는 질문",
+  "faqs": [
+    {
+      "id": "import-video",
+      "question": "사진 또는 파일에서 영상을 가져오려면 어떻게 하나요?",
+      "answer": "관련 영상 분석 기능을 열고 Apple 시스템 선택 화면에서 영상을 선택하세요. PongTrace는 사용자가 직접 선택한 항목만 처리합니다."
+    },
+    {
+      "id": "permissions",
+      "question": "PongTrace가 카메라 또는 사진 접근을 요청하는 이유는 무엇인가요?",
+      "answer": "카메라 접근은 실시간 자세 감지와 훈련 녹화에만 사용됩니다. 사진 추가 전용 접근은 사용자가 결과를 사진에 저장할 때만 요청합니다. 권한은 iOS 설정에서 변경할 수 있습니다."
+    },
+    {
+      "id": "local-processing",
+      "question": "PongTrace가 영상이나 동작 데이터를 업로드하나요?",
+      "answer": "아니요. 현재 버전은 계정이 필요하지 않으며 개발자 서버를 사용하지 않습니다. 영상, 자세 랜드마크, 동작 지표, 랠리 클립 및 동작 비교는 기기에서 처리됩니다."
+    },
+    {
+      "id": "save-export-delete",
+      "question": "콘텐츠를 저장, 내보내기 또는 삭제하려면 어떻게 하나요?",
+      "answer": "앱에서 제공하는 기능으로 훈련 콘텐츠를 저장, 내보내기 또는 삭제할 수 있습니다. 앱을 삭제하면 앱 샌드박스 데이터가 제거됩니다. 사진, 파일 또는 다른 위치에 저장한 복사본은 해당 위치에서 별도로 삭제해야 합니다."
+    },
+    {
+      "id": "troubleshooting",
+      "question": "기능이 정상적으로 작동하지 않으면 어떻게 하나요?",
+      "answer": "먼저 앱을 다시 열고 필요한 권한이 활성화되어 있는지, 기기에 충분한 저장 공간이 있는지 확인하세요. 문제가 계속되면 지원 이메일로 문의해 주세요."
+    }
+  ],
+  "privacy": {
+    "title": "개인정보 및 데이터",
+    "body": "PongTrace가 영상, 자세 데이터, 권한 및 로컬 저장소를 처리하는 방법을 확인하세요.",
+    "linkLabel": "PongTrace 개인정보 처리방침 보기"
+  },
+  "contactGuidance": {
+    "title": "문의하기 전에",
+    "body": "PongTrace 버전, iOS 버전, iPhone 모델, 문제가 발생한 기능과 재현 단계를 알려 주세요. 도움이 된다면 스크린샷을 첨부하세요. 꼭 필요한 경우가 아니면 개인 영상이나 민감한 개인정보를 보내지 마세요."
+  },
+  "ui": {
+    "skipToContent": "본문으로 이동",
+    "languageMenu": "언어 선택",
+    "availableLanguages": "사용 가능한 언어",
+    "homepage": "PongTrace 지원 홈"
+  },
+  "footerNote": "PongTrace 공식 지원 · 제품 도움말 및 피드백"
+}

@@ -8,6 +8,7 @@ interface Props {
   skipLabel: string;
   alternateLocales?: Array<{ lang: string; href: string }>;
   canonicalPath?: string;
+  xDefaultPath?: string;
 }
 
 const {
@@ -17,6 +18,7 @@ const {
   skipLabel,
   alternateLocales = [],
   canonicalPath = Astro.url.pathname,
+  xDefaultPath,
 } = Astro.props;
 const canonicalURL = new URL(canonicalPath, Astro.site);
 const socialImage = new URL(`${import.meta.env.BASE_URL}images/pongtrace/social-card.png`, Astro.site);
@@ -37,7 +39,11 @@ const socialImage = new URL(`${import.meta.env.BASE_URL}images/pongtrace/social-
         <link rel="alternate" hreflang={alternate.lang} href={new URL(alternate.href, Astro.site)} />
       ))
     }
-    <link rel="alternate" hreflang="x-default" href={new URL(`${import.meta.env.BASE_URL}privacy/pongtrace/`, Astro.site)} />
+    {
+      xDefaultPath && (
+        <link rel="alternate" hreflang="x-default" href={new URL(xDefaultPath, Astro.site)} />
+      )
+    }
     <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}images/pongtrace/app-icon-192.png`} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="PongTrace" />

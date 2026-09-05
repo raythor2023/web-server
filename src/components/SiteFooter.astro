@@ -2,9 +2,10 @@
 interface Props {
   note: string;
   htmlLang: string;
+  links?: Array<{ href: string; label: string }>;
 }
 
-const { note, htmlLang } = Astro.props;
+const { note, htmlLang, links = [] } = Astro.props;
 ---
 
 <footer class="site-footer" lang={htmlLang}>
@@ -12,6 +13,13 @@ const { note, htmlLang } = Astro.props;
     <div class="site-footer__brand">
       <strong>PongTrace</strong>
       <span>{note}</span>
+      {
+        links.length > 0 && (
+          <nav class="site-footer__links" aria-label="PongTrace">
+            {links.map((link) => <a href={link.href}>{link.label}</a>)}
+          </nav>
+        )
+      }
     </div>
     <div class="site-footer__meta">© {new Date().getFullYear()} PongTrace Independent Developer</div>
   </div>

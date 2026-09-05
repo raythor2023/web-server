@@ -1,0 +1,61 @@
+{
+  "appId": "pongtrace",
+  "appName": "PongTrace",
+  "locale": "ja",
+  "routeLocale": "ja",
+  "htmlLang": "ja",
+  "languageLabel": "日本語",
+  "pageTitle": "PongTrace サポート",
+  "eyebrow": "公式製品サポート",
+  "summary": "PongTraceの機能、権限、一般的な問題に関するヘルプをご確認いただけます。開発者へメールで直接お問い合わせいただくこともできます。",
+  "contact": {
+    "title": "PongTraceサポートへのお問い合わせ",
+    "body": "問題のご相談、フィードバック、機能のご要望はメールでお送りください。このメールアドレスはPongTrace開発者が製品サポートのために確認します。",
+    "emailLabel": "サポートメール",
+    "emailAddress": "forray2023@163.com"
+  },
+  "faqTitle": "よくある質問",
+  "faqs": [
+    {
+      "id": "import-video",
+      "question": "「写真」または「ファイル」から動画を読み込むには？",
+      "answer": "対象の動画解析機能を開き、Appleのシステム選択画面から動画を選択してください。PongTraceが処理するのは、お客様が選択した項目だけです。"
+    },
+    {
+      "id": "permissions",
+      "question": "PongTraceがカメラや写真へのアクセスを求めるのはなぜですか？",
+      "answer": "カメラはリアルタイムの姿勢検出とトレーニング録画にのみ使用します。「写真」への追加専用アクセスは、お客様が結果を「写真」に保存するときだけ求めます。権限はiOSの「設定」で変更できます。"
+    },
+    {
+      "id": "local-processing",
+      "question": "PongTraceは動画や動作データをアップロードしますか？",
+      "answer": "いいえ。現在のバージョンはアカウントが不要で、開発者サーバーも使用しません。動画、姿勢ランドマーク、動作指標、ラリークリップ、動作比較はデバイス上で処理されます。"
+    },
+    {
+      "id": "save-export-delete",
+      "question": "コンテンツを保存、書き出し、削除するには？",
+      "answer": "App内の操作でトレーニング内容を保存、書き出し、削除できます。Appを削除すると、そのサンドボックス内のデータも削除されます。「写真」「ファイル」などに保存したコピーは、保存先で別途削除してください。"
+    },
+    {
+      "id": "troubleshooting",
+      "question": "機能が正しく動作しない場合は？",
+      "answer": "まずAppを開き直し、必要な権限が有効であることと、デバイスに十分な空き容量があることをご確認ください。問題が続く場合は、サポートメールまでご連絡ください。"
+    }
+  ],
+  "privacy": {
+    "title": "プライバシーとデータ",
+    "body": "PongTraceによる動画、姿勢データ、権限、ローカル保存の取扱いをご確認ください。",
+    "linkLabel": "PongTraceプライバシーポリシーを見る"
+  },
+  "contactGuidance": {
+    "title": "お問い合わせの前に",
+    "body": "PongTraceのバージョン、iOSのバージョン、iPhoneのモデル、問題が起きた機能、再現手順をお知らせください。必要に応じてスクリーンショットも添付してください。必要な場合を除き、個人的な動画や機密性の高い個人情報は送信しないでください。"
+  },
+  "ui": {
+    "skipToContent": "本文へ移動",
+    "languageMenu": "言語を選択",
+    "availableLanguages": "利用可能な言語",
+    "homepage": "PongTraceサポートホーム"
+  },
+  "footerNote": "PongTrace公式サポート · 製品ヘルプとフィードバック"
+}

@@ -89,11 +89,37 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .policy-section p { margin: 0; color: var(--ink-650); font-size: 15px; line-height: 1.94; }
 .policy-section--supplement { margin-top: 18px; }
 
+.support-page { min-height: calc(100vh - 72px); }
+.support-intro { background: var(--paper); border-bottom: 1px solid var(--line); }
+.support-intro__inner { width: min(calc(100% - 40px), var(--content-width)); margin: 0 auto; padding: clamp(52px, 7vw, 84px) 0 clamp(42px, 6vw, 64px); }
+.support-intro h1 { max-width: 820px; margin: 0; font-size: clamp(42px, 6vw, 68px); font-weight: 720; letter-spacing: -0.055em; line-height: 1.04; }
+.support-intro__inner > p { max-width: 760px; margin: 24px 0 0; color: var(--ink-650); font-size: clamp(16px, 2vw, 19px); line-height: 1.8; }
+.support-shell { width: min(calc(100% - 40px), var(--content-width)); margin: 0 auto; padding: clamp(46px, 7vw, 76px) 0 clamp(76px, 10vw, 120px); }
+.support-contact { display: flex; align-items: center; justify-content: space-between; gap: 36px; padding: clamp(28px, 5vw, 44px); background: var(--paper); border: 1px solid var(--line); border-radius: 16px; box-shadow: 0 20px 60px rgba(17, 27, 38, 0.06); }
+.support-contact > div { max-width: 660px; }
+.support-contact h2, .support-faq h2, .support-note h2 { margin: 8px 0 12px; color: var(--ink-950); font-size: clamp(21px, 2.6vw, 27px); letter-spacing: -0.025em; line-height: 1.3; }
+.support-contact p:not(.section-kicker), .support-note p { margin: 0; color: var(--ink-650); font-size: 14px; line-height: 1.8; }
+.support-email { flex: 0 0 auto; padding: 12px 17px; color: white; font-size: 13px; font-weight: 720; background: var(--blue); border-radius: 8px; }
+.support-email:hover { background: #066da9; }
+.support-grid { display: grid; grid-template-columns: minmax(0, 1fr) 310px; gap: clamp(48px, 7vw, 82px); align-items: start; margin-top: clamp(48px, 7vw, 76px); }
+.support-faq > h2 { margin: 0 0 24px; }
+.support-faq__list { border-top: 1px solid var(--line-strong); }
+.support-faq article { padding: 27px 0 29px; border-bottom: 1px solid var(--line); }
+.support-faq h3 { margin: 0 0 10px; color: var(--ink-950); font-size: 17px; font-weight: 700; letter-spacing: -0.015em; line-height: 1.45; }
+.support-faq p { margin: 0; color: var(--ink-650); font-size: 14px; line-height: 1.85; }
+.support-aside { display: grid; gap: 18px; }
+.support-note { padding: 25px; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; }
+.support-note h2 { margin-top: 0; font-size: 17px; }
+.support-note a { display: inline-flex; margin-top: 17px; color: var(--blue); font-size: 13px; font-weight: 720; }
+.support-note a::after { margin-left: 7px; content: '→'; }
+
 .site-footer { color: var(--ink-650); background: var(--paper); border-top: 1px solid var(--line); }
 .site-footer__inner { display: flex; align-items: flex-start; justify-content: space-between; gap: 32px; width: min(calc(100% - 40px), var(--content-width)); margin: 0 auto; padding: 34px 0 38px; }
 .site-footer__brand { display: grid; gap: 6px; }
 .site-footer__brand strong { color: var(--ink-950); font-size: 13px; }
 .site-footer__brand span, .site-footer__meta { max-width: 620px; color: var(--ink-500); font-size: 11px; line-height: 1.6; }
+.site-footer__links { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 7px; }
+.site-footer__links a { color: var(--blue); font-size: 11px; font-weight: 680; }
 
 .back-to-top { position: fixed; right: 22px; bottom: 22px; z-index: 30; display: grid; width: 38px; height: 38px; color: var(--ink-650); font-size: 16px; cursor: pointer; background: rgba(255, 255, 255, 0.94); border: 1px solid var(--line-strong); border-radius: 50%; box-shadow: 0 8px 24px rgba(17, 27, 38, 0.1); opacity: 0; place-items: center; pointer-events: none; transform: translateY(8px); transition: opacity 150ms ease, transform 150ms ease; }
 .back-to-top[data-visible='true'] { opacity: 1; pointer-events: auto; transform: translateY(0); }
@@ -109,16 +135,23 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
   .policy-grid { grid-template-columns: 1fr; gap: 48px; }
   .policy-toc { position: static; padding-bottom: 28px; border-bottom: 1px solid var(--line); }
   .policy-toc nav { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px 24px; max-height: none; }
+  .support-grid { grid-template-columns: 1fr; }
+  .support-aside { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 640px) {
-  .site-header__inner, .legal-intro__inner, .policy-shell, .site-footer__inner { width: min(calc(100% - 32px), var(--content-width)); }
+  .site-header__inner, .legal-intro__inner, .policy-shell, .support-intro__inner, .support-shell, .site-footer__inner { width: min(calc(100% - 32px), var(--content-width)); }
   .site-header__inner { min-height: 64px; }
   .brand__descriptor, .official-badge { display: none; }
   .language-switcher summary { min-width: 84px; }
   .legal-intro__inner { padding-top: 42px; }
   .legal-intro__identity { margin-bottom: 30px; }
   .legal-intro h1 { font-size: clamp(38px, 12vw, 52px); }
+  .support-intro__inner { padding-top: 42px; }
+  .support-intro h1 { font-size: clamp(38px, 12vw, 52px); }
+  .support-contact { display: grid; gap: 24px; }
+  .support-email { width: 100%; justify-content: center; text-align: center; }
+  .support-aside { grid-template-columns: 1fr; }
   .privacy-facts { grid-template-columns: 1fr; margin-top: 34px; }
   .privacy-fact, .privacy-fact + .privacy-fact { padding: 14px 0; border-left: 0; }
   .privacy-fact + .privacy-fact { border-top: 1px solid var(--line); }
@@ -136,10 +169,13 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 
 @media print {
   @page { margin: 18mm; }
-  body, .legal-intro, .site-footer { background: white; }
+  body, .legal-intro, .support-intro, .site-footer { background: white; }
   .site-header, .policy-toc, .back-to-top, .reading-progress, .privacy-facts, .site-footer { display: none !important; }
-  .legal-intro__inner, .policy-shell { width: 100%; padding: 20px 0; }
+  .legal-intro__inner, .policy-shell, .support-intro__inner, .support-shell { width: 100%; padding: 20px 0; }
   .legal-intro h1 { font-size: 34pt; }
   .policy-grid { display: block; }
   .policy-section { break-inside: avoid; }
+  .support-contact { box-shadow: none; }
+  .support-grid { display: block; }
+  .support-aside { margin-top: 30px; }
 }

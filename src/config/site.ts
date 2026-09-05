@@ -24,7 +24,36 @@ export function withBase(path: string): string {
 }
 
 export function privacyPath(locale: string): string {
+  return localizedProductPath('privacy', 'pongtrace', locale);
+}
+
+export function supportPath(locale: string): string {
+  return localizedProductPath('support', 'pongtrace', locale);
+}
+
+export function localizedProductPath(
+  section: 'privacy' | 'support',
+  appId: string,
+  locale: string,
+): string {
   const localeConfig = LOCALES.find((candidate) => candidate.code === locale);
   const localePrefix = localeConfig?.route ? `/${localeConfig.route}` : '';
-  return withBase(`${localePrefix}/privacy/pongtrace/`);
+  return withBase(`${localePrefix}/${section}/${appId}/`);
+}
+
+const PRODUCT_LINK_LABELS = {
+  'zh-Hans': { privacy: '隐私政策', support: '支持' },
+  'zh-Hant': { privacy: '隱私權政策', support: '支援' },
+  en: { privacy: 'Privacy Policy', support: 'Support' },
+  'en-GB': { privacy: 'Privacy Policy', support: 'Support' },
+  de: { privacy: 'Datenschutz', support: 'Support' },
+  ja: { privacy: 'プライバシーポリシー', support: 'サポート' },
+  ko: { privacy: '개인정보 처리방침', support: '지원' },
+} as const;
+
+export function productLinkLabels(locale: string) {
+  return (
+    PRODUCT_LINK_LABELS[locale as keyof typeof PRODUCT_LINK_LABELS] ??
+    PRODUCT_LINK_LABELS[DEFAULT_LOCALE]
+  );
 }

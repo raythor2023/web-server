@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import SupportPage from '../../../../components/SupportPage.astro';
+import { LOCALES } from '../../../../config/site';
+
+export async function getStaticPaths() {
+  const supportEntries = await getCollection('support');
+
+  return LOCALES.filter(({ route }) => route).map((locale) => {
+    const entry = supportEntries.find(
+      ({ data }) => data.appId === 'pongtrace' && data.locale === locale.code,
+    );
+
+    if (!entry) {
+      throw new Error(`Missing PongTrace support page for ${locale.code}`);
+    }
+
+    return {
+      params: { locale: locale.route },
+      props: {
+        support: entry.data,
+        availableLocales: supportEntries
+          .filter(({ data }) => data.appId === 'pongtrace')
+          .map(({ data }) => data.locale),
+      },
+    };
+  });
+}
+
+const { support, availableLocales } = Astro.props;
+---
+
+<SupportPage support={support} availableLocales={availableLocales} />

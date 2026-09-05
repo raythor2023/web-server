@@ -1,0 +1,61 @@
+{
+  "appId": "pongtrace",
+  "appName": "PongTrace",
+  "locale": "de",
+  "routeLocale": "de",
+  "htmlLang": "de",
+  "languageLabel": "Deutsch",
+  "pageTitle": "PongTrace Support",
+  "eyebrow": "Offizieller Produktsupport",
+  "summary": "Hier finden Sie Hilfe zu PongTrace-Funktionen, Berechtigungen und häufigen Problemen oder können den Entwickler direkt per E-Mail kontaktieren.",
+  "contact": {
+    "title": "PongTrace Support kontaktieren",
+    "body": "Schreiben Sie uns, wenn Sie Hilfe benötigen, Feedback geben oder eine Funktion vorschlagen möchten. Diese Adresse wird vom PongTrace-Entwickler für Produktanfragen betreut.",
+    "emailLabel": "Support-E-Mail",
+    "emailAddress": "forray2023@163.com"
+  },
+  "faqTitle": "Häufig gestellte Fragen",
+  "faqs": [
+    {
+      "id": "import-video",
+      "question": "Wie importiere ich ein Video aus Fotos oder Dateien?",
+      "answer": "Öffnen Sie die entsprechende Videoanalyse und wählen Sie ein Video über die Systemauswahl von Apple. PongTrace verarbeitet nur das von Ihnen ausgewählte Objekt."
+    },
+    {
+      "id": "permissions",
+      "question": "Warum benötigt PongTrace Zugriff auf Kamera oder Fotos?",
+      "answer": "Der Kamerazugriff dient ausschließlich der Live-Haltungserkennung und Trainingsaufnahme. Der reine Hinzufügezugriff auf Fotos wird nur angefordert, wenn Sie ein Ergebnis in Fotos speichern. Berechtigungen können Sie in den iOS-Einstellungen ändern."
+    },
+    {
+      "id": "local-processing",
+      "question": "Lädt PongTrace meine Videos oder Bewegungsdaten hoch?",
+      "answer": "Nein. Die aktuelle Version benötigt kein Konto und verwendet keinen Entwicklerserver. Videos, Haltungspunkte, Bewegungsmesswerte, Ballwechselclips und Bewegungsvergleiche werden auf Ihrem Gerät verarbeitet."
+    },
+    {
+      "id": "save-export-delete",
+      "question": "Wie speichere, exportiere oder lösche ich Inhalte?",
+      "answer": "Verwenden Sie die verfügbaren Funktionen in der App, um Trainingsinhalte zu speichern, zu exportieren oder zu löschen. Beim Löschen der App werden die Sandbox-Daten entfernt. Kopien in Fotos, Dateien oder anderen Zielen müssen dort separat gelöscht werden."
+    },
+    {
+      "id": "troubleshooting",
+      "question": "Was kann ich tun, wenn eine Funktion nicht arbeitet?",
+      "answer": "Öffnen Sie die App erneut, prüfen Sie die erforderlichen Berechtigungen und stellen Sie sicher, dass genügend Speicherplatz verfügbar ist. Besteht das Problem weiter, schreiben Sie an die Support-E-Mail."
+    }
+  ],
+  "privacy": {
+    "title": "Datenschutz und Daten",
+    "body": "Erfahren Sie, wie PongTrace Videos, Haltungsdaten, Berechtigungen und lokale Speicherung behandelt.",
+    "linkLabel": "PongTrace-Datenschutzrichtlinie anzeigen"
+  },
+  "contactGuidance": {
+    "title": "Vor Ihrer Anfrage",
+    "body": "Nennen Sie nach Möglichkeit die PongTrace-Version, iOS-Version, das iPhone-Modell, die betroffene Funktion und die Schritte zum Nachvollziehen des Problems. Ein Screenshot kann hilfreich sein. Senden Sie private Videos oder sensible personenbezogene Informationen nur, wenn dies erforderlich ist."
+  },
+  "ui": {
+    "skipToContent": "Zum Inhalt springen",
+    "languageMenu": "Sprache auswählen",
+    "availableLanguages": "Verfügbare Sprachen",
+    "homepage": "PongTrace Support-Startseite"
+  },
+  "footerNote": "Offizieller PongTrace Support · Produkthilfe und Feedback"
+}

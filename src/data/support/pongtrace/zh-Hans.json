@@ -1,0 +1,61 @@
+{
+  "appId": "pongtrace",
+  "appName": "PongTrace",
+  "locale": "zh-Hans",
+  "routeLocale": "",
+  "htmlLang": "zh-Hans",
+  "languageLabel": "简体中文",
+  "pageTitle": "PongTrace 支持",
+  "eyebrow": "官方产品支持",
+  "summary": "在这里查看 PongTrace 的使用帮助、权限说明和常见故障处理方法，也可以直接通过邮件联系开发者。",
+  "contact": {
+    "title": "联系 PongTrace 支持",
+    "body": "如果你遇到问题、希望提出建议或申请功能改进，请发送邮件。该邮箱由 PongTrace 开发者用于处理产品支持请求。",
+    "emailLabel": "支持邮箱",
+    "emailAddress": "forray2023@163.com"
+  },
+  "faqTitle": "常见问题",
+  "faqs": [
+    {
+      "id": "import-video",
+      "question": "如何从“照片”或“文件”导入视频？",
+      "answer": "打开相应的视频分析功能，通过 Apple 系统选择器选择视频。PongTrace 只处理你主动选择的内容。"
+    },
+    {
+      "id": "permissions",
+      "question": "为什么 PongTrace 请求相机或照片权限？",
+      "answer": "相机权限仅用于实时姿态识别和训练录制；只有当你主动将结果保存到“照片”时，才会请求添加照片的权限。你可以在 iOS“设置”中更改权限。"
+    },
+    {
+      "id": "local-processing",
+      "question": "PongTrace 会上传我的视频或动作数据吗？",
+      "answer": "不会。当前版本无需账号，不使用开发者服务器；视频、姿态关键点、动作指标、回合集锦和动作对比均在设备本地处理。"
+    },
+    {
+      "id": "save-export-delete",
+      "question": "如何保存、导出或删除内容？",
+      "answer": "你可以通过 App 内提供的操作保存、导出或删除训练内容。删除 App 会移除其沙盒数据；已保存到“照片”“文件”或其他位置的副本需要在对应位置单独删除。"
+    },
+    {
+      "id": "troubleshooting",
+      "question": "功能无法正常使用时怎么办？",
+      "answer": "请先重新打开 App，确认相关权限已开启，并检查设备是否有足够存储空间。如果问题仍然存在，请通过支持邮箱联系我们。"
+    }
+  ],
+  "privacy": {
+    "title": "隐私与数据",
+    "body": "了解 PongTrace 处理视频、姿态数据、权限和本地存储的方式。",
+    "linkLabel": "查看 PongTrace 隐私政策"
+  },
+  "contactGuidance": {
+    "title": "联系前建议",
+    "body": "邮件中可以注明 PongTrace 版本、iOS 版本、iPhone 型号、出现问题的功能和复现步骤，并在有帮助时附上截图。除非确有必要，请不要发送私人视频或敏感个人信息。"
+  },
+  "ui": {
+    "skipToContent": "跳到正文",
+    "languageMenu": "选择语言",
+    "availableLanguages": "可用语言",
+    "homepage": "PongTrace 支持首页"
+  },
+  "footerNote": "PongTrace 官方支持 · 问题反馈与使用帮助"
+}

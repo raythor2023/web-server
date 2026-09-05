@@ -2,15 +2,18 @@ import { access, readFile, stat } from 'node:fs/promises';
 import { join } from 'node:path';
 
 const dist = new URL('../dist/', import.meta.url);
-const routes = [
-  'privacy/pongtrace/index.html',
-  'zh-hant/privacy/pongtrace/index.html',
-  'en/privacy/pongtrace/index.html',
-  'en-gb/privacy/pongtrace/index.html',
-  'de/privacy/pongtrace/index.html',
-  'ja/privacy/pongtrace/index.html',
-  'ko/privacy/pongtrace/index.html',
+const localizations = [
+  '',
+  'zh-hant/',
+  'en/',
+  'en-gb/',
+  'de/',
+  'ja/',
+  'ko/',
 ];
+
+const privacyRoutes = localizations.map((prefix) => `${prefix}privacy/pongtrace/index.html`);
+const supportRoutes = localizations.map((prefix) => `${prefix}support/pongtrace/index.html`);
 
 const requiredPolicyFacts = [
   '1.2',
@@ -30,7 +33,7 @@ const forbiddenPolicyFacts = [
   'id="contact"',
 ];
 
-for (const route of routes) {
+for (const route of [...privacyRoutes, ...supportRoutes]) {
   const file = new URL(route, dist);
   await access(file);
   const html = await readFile(file, 'utf8');
@@ -42,6 +45,15 @@ for (const route of routes) {
   if (!html.includes('hreflang="x-default"')) {
     throw new Error(`${route} is missing language alternatives`);
   }
+
+  if (/<script[^>]+src=["']https?:\/\//i.test(html)) {
+    throw new Error(`${route} unexpectedly loads an external script`);
+  }
+}
+
+for (const [index, route] of privacyRoutes.entries()) {
+  const html = await readFile(new URL(route, dist), 'utf8');
+  const prefix = localizations[index];
 
   for (const fact of requiredPolicyFacts) {
     if (!html.includes(fact)) {
@@ -55,8 +67,34 @@ for (const route of routes) {
     }
   }
 
-  if (/<script[^>]+src=["']https?:\/\//i.test(html)) {
-    throw new Error(`${route} unexpectedly loads an external script`);
+  if (!html.includes(`href="/web-server/${prefix}support/pongtrace/"`)) {
+    throw new Error(`${route} is missing its localized support link`);
+  }
+}
+
+for (const [index, route] of supportRoutes.entries()) {
+  const html = await readFile(new URL(route, dist), 'utf8');
+  const prefix = localizations[index];
+  const requiredSupportFacts = [
+    'PongTrace',
+    'forray2023@163.com',
+    'mailto:forray2023@163.com',
+    'id="frequently-asked-questions"',
+    `href="/web-server/${prefix}privacy/pongtrace/"`,
+  ];
+
+  for (const fact of requiredSupportFacts) {
+    if (!html.includes(fact)) {
+      throw new Error(`${route} is missing required support content: ${fact}`);
+    }
+  }
+
+  if (html.includes('<form')) {
+    throw new Error(`${route} unexpectedly contains a form`);
+  }
+
+  if (!html.includes('hreflang="x-default" href="https://raythor2023.github.io/web-server/support/pongtrace/"')) {
+    throw new Error(`${route} has an incorrect x-default support URL`);
   }
 }
 
@@ -69,4 +107,6 @@ if (socialCardStats.size < 50_000) {
 const sitemap = join(dist.pathname, 'sitemap-index.xml');
 await access(sitemap);
 
-console.log(`Verified ${routes.length} localized policy pages and required public assets.`);
+console.log(
+  `Verified ${privacyRoutes.length} privacy pages, ${supportRoutes.length} support pages, and required public assets.`,
+);

@@ -3,7 +3,7 @@ import type { CollectionEntry } from 'astro:content';
 import SiteFooter from './SiteFooter.astro';
 import SiteHeader from './SiteHeader.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { LOCALES, privacyPath } from '../config/site';
+import { LOCALES, privacyPath, productLinkLabels, supportPath } from '../config/site';
 
 type PolicyData = CollectionEntry<'privacy'>['data'];
 
@@ -18,6 +18,7 @@ const pageDescription = policy.summary;
 const alternateLocales = LOCALES.filter((locale) => availableLocales.includes(locale.code)).map(
   (locale) => ({ lang: locale.htmlLang, href: privacyPath(locale.code) }),
 );
+const linkLabels = productLinkLabels(policy.locale);
 ---
 
 <BaseLayout
@@ -26,6 +27,7 @@ const alternateLocales = LOCALES.filter((locale) => availableLocales.includes(lo
   lang={policy.htmlLang}
   skipLabel={policy.ui.skipToContent}
   alternateLocales={alternateLocales}
+  xDefaultPath={privacyPath('zh-Hans')}
 >
   <div class="reading-progress" data-reading-progress aria-hidden="true"></div>
   <SiteHeader
@@ -35,6 +37,9 @@ const alternateLocales = LOCALES.filter((locale) => availableLocales.includes(lo
     homeLabel={policy.ui.homepage}
     languageMenuLabel={policy.ui.languageMenu}
     availableLanguagesLabel={policy.ui.availableLanguages}
+    homeHref={privacyPath(policy.locale)}
+    section="privacy"
+    appId={policy.appId}
   />
 
   <main id="main-content" class="legal-page">
@@ -115,7 +120,11 @@ const alternateLocales = LOCALES.filter((locale) => availableLocales.includes(lo
     </div>
   </main>
 
-  <SiteFooter note={policy.footerNote} htmlLang={policy.htmlLang} />
+  <SiteFooter
+    note={policy.footerNote}
+    htmlLang={policy.htmlLang}
+    links={[{ href: supportPath(policy.locale), label: linkLabels.support }]}
+  />
 
   <button class="back-to-top" type="button" aria-label={policy.ui.backToTop} data-back-to-top>↑</button>
 
