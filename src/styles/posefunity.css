@@ -1,0 +1,2 @@
+.pf-policy-reference { display: inline-flex; margin-top: 14px; color: var(--blue); font-size: 13px; font-weight: 700; }
+.pf-policy-reference:hover { text-decoration: underline; text-underline-offset: 3px; }

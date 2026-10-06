@@ -14,6 +14,9 @@ const localizations = [
 
 const privacyRoutes = localizations.map((prefix) => `${prefix}privacy/pongtrace/index.html`);
 const supportRoutes = localizations.map((prefix) => `${prefix}support/pongtrace/index.html`);
+const poseFunityRoutes = ['privacy/posefunity/', 'support/posefunity/'].flatMap(
+  (route) => [route, `en/${route}`],
+);
 
 const requiredPolicyFacts = [
   '1.2',
@@ -98,6 +101,37 @@ for (const [index, route] of supportRoutes.entries()) {
   }
 }
 
+for (const route of poseFunityRoutes) {
+  const html = await readFile(new URL(`${route}index.html`, dist), 'utf8');
+  const prefix = route.startsWith('en/') ? 'en/' : '';
+  for (const expected of [
+    'PoseFunity',
+    '<link rel="canonical"',
+    'hreflang="zh-Hans"',
+    'hreflang="en"',
+    `href="/web-server/${prefix}privacy/posefunity/"`,
+    `href="/web-server/${prefix}support/posefunity/"`,
+  ]) {
+    if (!html.includes(expected)) throw new Error(`${route} is missing ${expected}`);
+  }
+  if (/<script[^>]+src=["']https?:\/\//i.test(html)) {
+    throw new Error(`${route} unexpectedly loads an external script`);
+  }
+}
+
+for (const locale of ['', 'en/']) {
+  const privacy = await readFile(new URL(`${locale}privacy/posefunity/index.html`, dist), 'utf8');
+  if (!privacy.includes('developers.google.com/admob/ios/privacy/data-disclosure')) {
+    throw new Error(`${locale}PoseFunity privacy page is missing the ad disclosure`);
+  }
+  const support = await readFile(new URL(`${locale}support/posefunity/index.html`, dist), 'utf8');
+  if (!support.includes('mailto:forray2023@163.com')) {
+    throw new Error(`${locale}PoseFunity support page is missing the contact link`);
+  }
+}
+
+await access(new URL('images/posefunity/app-icon.png', dist));
+
 const socialCard = new URL('images/pongtrace/social-card.png', dist);
 const socialCardStats = await stat(socialCard);
 if (socialCardStats.size < 50_000) {
@@ -108,5 +142,5 @@ const sitemap = join(dist.pathname, 'sitemap-index.xml');
 await access(sitemap);
 
 console.log(
-  `Verified ${privacyRoutes.length} privacy pages, ${supportRoutes.length} support pages, and required public assets.`,
+  `Verified ${privacyRoutes.length} PongTrace privacy pages, ${supportRoutes.length} PongTrace support pages, ${poseFunityRoutes.length} PoseFunity pages, and required public assets.`,
 );

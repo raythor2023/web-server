@@ -9,6 +9,11 @@ interface Props {
   alternateLocales?: Array<{ lang: string; href: string }>;
   canonicalPath?: string;
   xDefaultPath?: string;
+  productName?: string;
+  iconPath?: string;
+  socialImagePath?: string;
+  socialImageWidth?: number;
+  socialImageHeight?: number;
 }
 
 const {
@@ -19,9 +24,14 @@ const {
   alternateLocales = [],
   canonicalPath = Astro.url.pathname,
   xDefaultPath,
+  productName = 'PongTrace',
+  iconPath = `${import.meta.env.BASE_URL}images/pongtrace/app-icon-192.png`,
+  socialImagePath = `${import.meta.env.BASE_URL}images/pongtrace/social-card.png`,
+  socialImageWidth = 1200,
+  socialImageHeight = 630,
 } = Astro.props;
 const canonicalURL = new URL(canonicalPath, Astro.site);
-const socialImage = new URL(`${import.meta.env.BASE_URL}images/pongtrace/social-card.png`, Astro.site);
+const socialImage = new URL(socialImagePath, Astro.site);
 ---
 
 <!doctype html>
@@ -44,15 +54,15 @@ const socialImage = new URL(`${import.meta.env.BASE_URL}images/pongtrace/social-
         <link rel="alternate" hreflang="x-default" href={new URL(xDefaultPath, Astro.site)} />
       )
     }
-    <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}images/pongtrace/app-icon-192.png`} />
+    <link rel="icon" type="image/png" href={iconPath} />
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="PongTrace" />
+    <meta property="og:site_name" content={productName} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content={socialImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
+    <meta property="og:image:width" content={String(socialImageWidth)} />
+    <meta property="og:image:height" content={String(socialImageHeight)} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />

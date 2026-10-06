@@ -3,24 +3,26 @@ interface Props {
   note: string;
   htmlLang: string;
   links?: Array<{ href: string; label: string }>;
+  productName?: string;
+  copyrightName?: string;
 }
 
-const { note, htmlLang, links = [] } = Astro.props;
+const { note, htmlLang, links = [], productName = 'PongTrace', copyrightName = 'PongTrace Independent Developer' } = Astro.props;
 ---
 
 <footer class="site-footer" lang={htmlLang}>
   <div class="site-footer__inner">
     <div class="site-footer__brand">
-      <strong>PongTrace</strong>
+      <strong>{productName}</strong>
       <span>{note}</span>
       {
         links.length > 0 && (
-          <nav class="site-footer__links" aria-label="PongTrace">
+          <nav class="site-footer__links" aria-label={productName}>
             {links.map((link) => <a href={link.href}>{link.label}</a>)}
           </nav>
         )
       }
     </div>
-    <div class="site-footer__meta">© {new Date().getFullYear()} PongTrace Independent Developer</div>
+    <div class="site-footer__meta">© {new Date().getFullYear()} {copyrightName}</div>
   </div>
 </footer>

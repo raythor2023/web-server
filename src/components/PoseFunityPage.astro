@@ -1,0 +1,179 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SiteFooter from './SiteFooter.astro';
+import SiteHeader from './SiteHeader.astro';
+import {
+  poseFunityContent,
+  poseFunityPath,
+  type PoseFunityLocale,
+  type PoseFunitySection,
+} from '../config/posefunity';
+import '../styles/posefunity.css';
+
+interface Props {
+  locale: PoseFunityLocale;
+  section: PoseFunitySection;
+}
+
+const { locale, section } = Astro.props;
+const content = poseFunityContent[locale];
+const page = content[section];
+const isEnglish = locale === 'en';
+const icon = `${import.meta.env.BASE_URL}images/posefunity/app-icon.png`;
+const emailHref = `mailto:${content.email}?subject=${encodeURIComponent('PoseFunity Support')}`;
+const officialLabel = section === 'privacy'
+  ? (isEnglish ? 'Official Privacy Policy' : '官方隐私政策')
+  : (isEnglish ? 'Official Product Support' : '官方产品支持');
+const homeLabel = section === 'privacy'
+  ? (isEnglish ? 'PoseFunity Privacy Policy home' : 'PoseFunity 隐私政策首页')
+  : (isEnglish ? 'PoseFunity Support home' : 'PoseFunity 支持首页');
+const privacyHighlights = isEnglish
+  ? [
+      ['Creative media', 'Processed on device'],
+      ['Project storage', 'Saved on your device'],
+      ['Advertising', 'Third-party processing disclosed'],
+    ]
+  : [
+      ['创作素材', '在设备本地处理'],
+      ['项目存储', '保存在你的设备上'],
+      ['广告服务', '明确披露第三方处理'],
+    ];
+const supportGuidance = isEnglish
+  ? {
+      title: 'Before contacting us',
+      body: 'Include the PoseFunity version, iOS version, iPhone model, affected feature, and steps to reproduce. Add a screenshot when useful. Please avoid sending private videos or sensitive information unless necessary.',
+    }
+  : {
+      title: '联系前建议',
+      body: '请注明 PoseFunity 版本、iOS 版本、iPhone 型号、出现问题的功能和复现步骤，并在有帮助时附上截图。除非确有必要，请不要发送私人视频或敏感个人信息。',
+    };
+---
+
+<BaseLayout
+  title={`${page.title} · PoseFunity`}
+  description={page.summary}
+  lang={content.lang}
+  skipLabel={content.skip}
+  alternateLocales={[
+    { lang: 'zh-Hans', href: poseFunityPath(section, 'zh-Hans') },
+    { lang: 'en', href: poseFunityPath(section, 'en') },
+  ]}
+  xDefaultPath={poseFunityPath(section, 'zh-Hans')}
+  productName="PoseFunity"
+  iconPath={icon}
+  socialImagePath={icon}
+  socialImageWidth={1024}
+  socialImageHeight={1024}
+>
+  {section === 'privacy' && <div class="reading-progress" data-reading-progress aria-hidden="true"></div>}
+
+  <SiteHeader
+    currentLocale={locale}
+    availableLocales={['zh-Hans', 'en']}
+    officialLabel={officialLabel}
+    homeLabel={homeLabel}
+    languageMenuLabel={content.nav.language}
+    availableLanguagesLabel={content.nav.language}
+    homeHref={poseFunityPath(section, locale)}
+    section={section}
+    appId="posefunity"
+    productName="PoseFunity"
+    descriptor="Motion Capture Studio"
+    iconPath={icon}
+  />
+
+  {section === 'privacy' && (
+    <main id="main-content" class="legal-page">
+      <section class="legal-intro" aria-labelledby="pf-policy-title">
+        <div class="legal-intro__inner">
+          <div class="legal-intro__identity">
+            <img src={icon} alt="" width="64" height="64" />
+            <div><span>PoseFunity</span><span>{officialLabel}</span></div>
+          </div>
+          <h1 id="pf-policy-title">{content.privacy.title}</h1>
+          <p class="legal-intro__summary">{content.privacy.summary}</p>
+          <div class="legal-intro__meta" aria-label={isEnglish ? 'Policy information' : '政策信息'}>
+            <span>{content.privacy.effective}</span><span aria-hidden="true">·</span><span>{isEnglish ? 'Policy version 1.0' : '政策版本：1.0'}</span>
+          </div>
+          <div class="privacy-facts" aria-label={isEnglish ? 'Privacy highlights' : '隐私摘要'}>
+            {privacyHighlights.map(([label, value]) => <div class="privacy-fact"><span>{label}</span><strong>{value}</strong></div>)}
+          </div>
+        </div>
+      </section>
+
+      <div class="policy-shell"><div class="policy-grid">
+        <aside class="policy-toc" aria-label={content.privacy.contents}>
+          <span class="policy-toc__label">{content.privacy.contents}</span>
+          <nav>{content.privacy.sections.map((item, index) => <a href={`#${item.id}`}><span class="policy-toc__number">{String(index + 1).padStart(2, '0')}</span><span>{item.title}</span></a>)}</nav>
+        </aside>
+        <article class="policy-document">
+          {content.privacy.sections.map((item, index) => (
+            <section class="policy-section" id={item.id}>
+              <div class="policy-section__heading"><span class="policy-section__number">{String(index + 1).padStart(2, '0')}</span><h2>{item.title}</h2></div>
+              <p>{item.body}</p>
+              {item.id === 'ads' && <a class="pf-policy-reference" href={content.adDisclosureUrl} target="_blank" rel="noopener noreferrer">{content.privacy.adLink} ↗</a>}
+            </section>
+          ))}
+        </article>
+      </div></div>
+    </main>
+  )}
+
+  {section === 'support' && (
+    <main id="main-content" class="support-page">
+      <section class="support-intro" aria-labelledby="pf-support-title">
+        <div class="support-intro__inner">
+          <div class="legal-intro__identity">
+            <img src={icon} alt="" width="64" height="64" />
+            <div><span>PoseFunity</span><span>{officialLabel}</span></div>
+          </div>
+          <h1 id="pf-support-title">{content.support.title}</h1>
+          <p>{content.support.summary}</p>
+        </div>
+      </section>
+
+      <div class="support-shell">
+        <section class="support-contact" aria-labelledby="pf-contact-title">
+          <div><p class="section-kicker">{isEnglish ? 'Support email' : '支持邮箱'}</p><h2 id="pf-contact-title">{content.support.contactTitle}</h2><p>{content.support.contactBody}</p></div>
+          <a class="support-email" href={emailHref}>{content.email}</a>
+        </section>
+        <div class="support-grid">
+          <section id="frequently-asked-questions" class="support-faq" aria-labelledby="pf-faq-title">
+            <h2 id="pf-faq-title">{content.support.faqTitle}</h2>
+            <div class="support-faq__list">{content.support.faqs.map((faq) => <article id={faq.id}><h3>{faq.question}</h3><p>{faq.answer}</p></article>)}</div>
+          </section>
+          <aside class="support-aside">
+            <section class="support-note"><h2>{supportGuidance.title}</h2><p>{supportGuidance.body}</p></section>
+            <section class="support-note"><h2>{content.support.privacyTitle}</h2><p>{content.support.privacyBody}</p><a href={poseFunityPath('privacy', locale)}>{content.support.privacyAction}</a></section>
+          </aside>
+        </div>
+      </div>
+    </main>
+  )}
+
+  <SiteFooter
+    note={content.footer}
+    htmlLang={content.lang}
+    productName="PoseFunity"
+    copyrightName="PoseFunity Independent Developer"
+    links={[{
+      href: poseFunityPath(section === 'privacy' ? 'support' : 'privacy', locale),
+      label: content.nav[section === 'privacy' ? 'support' : 'privacy'],
+    }]}
+  />
+
+  {section === 'privacy' && <button class="back-to-top" type="button" aria-label={isEnglish ? 'Back to top' : '返回页面顶部'} data-back-to-top>↑</button>}
+  {section === 'privacy' && <script>
+    const progress = document.querySelector<HTMLElement>('[data-reading-progress]');
+    const backToTop = document.querySelector<HTMLButtonElement>('[data-back-to-top]');
+    const updateScrollUI = () => {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = scrollable > 0 ? Math.min(window.scrollY / scrollable, 1) : 0;
+      progress?.style.setProperty('transform', `scaleX(${ratio})`);
+      backToTop?.setAttribute('data-visible', String(window.scrollY > 620));
+    };
+    updateScrollUI();
+    window.addEventListener('scroll', updateScrollUI, { passive: true });
+    backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  </script>}
+</BaseLayout>
