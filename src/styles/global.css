@@ -130,6 +130,12 @@ button, summary, a { -webkit-tap-highlight-color: transparent; }
 .error-page h1 { margin: 12px 0 16px; font-size: clamp(40px, 8vw, 68px); letter-spacing: -0.05em; }
 .error-page p:not(.section-kicker) { color: var(--ink-650); line-height: 1.75; }
 .error-page a { display: inline-flex; margin-top: 18px; padding: 11px 16px; color: white; font-weight: 700; background: var(--blue); border-radius: 8px; }
+.error-page__products { display: grid; gap: 18px; margin-top: 30px; }
+.error-page__product { padding-top: 18px; border-top: 1px solid var(--line); }
+.error-page__product-name { display: flex; align-items: center; gap: 10px; }
+.error-page__product-name img { width: 36px; height: 36px; border-radius: 9px; }
+.error-page__links { display: flex; flex-wrap: wrap; gap: 10px; }
+.error-page__links a { margin-top: 14px; }
 
 @media (max-width: 880px) {
   .policy-grid { grid-template-columns: 1fr; gap: 48px; }

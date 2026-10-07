@@ -1,23 +1,51 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { privacyPath } from '../config/site';
+import { privacyPath, supportPath, withBase } from '../config/site';
+import { poseFunityPath } from '../config/posefunity';
 
-const destination = privacyPath('zh-Hans');
+const products = [
+  {
+    name: 'PongTrace',
+    icon: withBase('images/pongtrace/app-icon-192.png'),
+    privacy: privacyPath('zh-Hans'),
+    support: supportPath('zh-Hans'),
+  },
+  {
+    name: 'PoseFunity',
+    icon: withBase('images/posefunity/app-icon.png'),
+    privacy: poseFunityPath('privacy', 'zh-Hans'),
+    support: poseFunityPath('support', 'zh-Hans'),
+  },
+];
 ---
 
 <BaseLayout
-  title="Page not found · PongTrace"
-  description="The requested PongTrace page could not be found."
-  lang="en"
-  skipLabel="Skip to content"
+  title="页面不存在 · Raythor"
+  description="此页面不存在。前往 PongTrace 或 PoseFunity 的隐私政策与支持页面。"
+  lang="zh-Hans"
+  skipLabel="跳到正文"
+  productName="Raythor"
+  robots="noindex,follow"
 >
   <main id="main-content" class="error-page">
     <div class="error-page__card">
       <span class="error-page__code">404</span>
-      <p class="section-kicker">PongTrace</p>
-      <h1>Page not found</h1>
-      <p>The address may have changed. Continue to the current PongTrace Privacy Policy.</p>
-      <a href={destination}>View Privacy Policy</a>
+      <h1>页面不存在</h1>
+      <p>链接可能已变更。请选择要访问的产品页面。</p>
+      <div class="error-page__products">
+        {products.map((product) => (
+          <section class="error-page__product" aria-label={product.name}>
+            <div class="error-page__product-name">
+              <img src={product.icon} alt="" width="36" height="36" />
+              <strong>{product.name}</strong>
+            </div>
+            <div class="error-page__links">
+              <a href={product.privacy}>隐私政策</a>
+              <a href={product.support}>支持</a>
+            </div>
+          </section>
+        ))}
+      </div>
     </div>
   </main>
 </BaseLayout>

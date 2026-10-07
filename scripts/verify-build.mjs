@@ -124,10 +124,28 @@ for (const locale of ['', 'en/']) {
   if (!privacy.includes('developers.google.com/admob/ios/privacy/data-disclosure')) {
     throw new Error(`${locale}PoseFunity privacy page is missing the ad disclosure`);
   }
+  if (!privacy.includes('mailto:forray2023@163.com?subject=PoseFunity%20Privacy')) {
+    throw new Error(`${locale}PoseFunity privacy page is missing its contact link`);
+  }
   const support = await readFile(new URL(`${locale}support/posefunity/index.html`, dist), 'utf8');
   if (!support.includes('mailto:forray2023@163.com')) {
     throw new Error(`${locale}PoseFunity support page is missing the contact link`);
   }
+}
+
+const notFound = await readFile(new URL('404.html', dist), 'utf8');
+for (const route of [
+  'privacy/pongtrace/',
+  'support/pongtrace/',
+  'privacy/posefunity/',
+  'support/posefunity/',
+]) {
+  if (!notFound.includes(`href="/web-server/${route}"`)) {
+    throw new Error(`404 page is missing the ${route} recovery link`);
+  }
+}
+if (!notFound.includes('content="noindex,follow"')) {
+  throw new Error('404 page must not be indexed');
 }
 
 await access(new URL('images/posefunity/app-icon.png', dist));

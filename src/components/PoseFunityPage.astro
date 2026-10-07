@@ -21,6 +21,7 @@ const page = content[section];
 const isEnglish = locale === 'en';
 const icon = `${import.meta.env.BASE_URL}images/posefunity/app-icon.png`;
 const emailHref = `mailto:${content.email}?subject=${encodeURIComponent('PoseFunity Support')}`;
+const privacyEmailHref = `mailto:${content.email}?subject=${encodeURIComponent('PoseFunity Privacy')}`;
 const officialLabel = section === 'privacy'
   ? (isEnglish ? 'Official Privacy Policy' : '官方隐私政策')
   : (isEnglish ? 'Official Product Support' : '官方产品支持');
@@ -112,6 +113,7 @@ const supportGuidance = isEnglish
               <div class="policy-section__heading"><span class="policy-section__number">{String(index + 1).padStart(2, '0')}</span><h2>{item.title}</h2></div>
               <p>{item.body}</p>
               {item.id === 'ads' && <a class="pf-policy-reference" href={content.adDisclosureUrl} target="_blank" rel="noopener noreferrer">{content.privacy.adLink} ↗</a>}
+              {item.id === 'website' && <a class="pf-policy-reference" href={privacyEmailHref}>{content.privacy.contactAction}: {content.email}</a>}
             </section>
           ))}
         </article>
