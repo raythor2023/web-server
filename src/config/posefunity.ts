@@ -23,7 +23,7 @@ export const poseFunityContent = {
     privacy: {
       title: '隐私政策',
       summary: '本政策说明 PoseFunity 在提供动作捕捉与视频创作功能时如何处理信息，以及你可以如何管理相关数据。',
-      effective: '生效日期：2026 年 9 月 23 日',
+      effective: '生效日期：2026 年 10 月 20 日',
       contents: '本页内容',
       sections: [
         { id: 'operator', title: '运营者及适用范围', body: 'PoseFunity 由独立开发者提供。本政策适用于 PoseFunity iOS 应用及本网站的 PoseFunity 页面，说明我们处理信息的方式。你可以通过本页末尾列出的邮箱就隐私问题联系我们。' },
@@ -34,7 +34,7 @@ export const poseFunityContent = {
         { id: 'sharing', title: '主动分享与外部副本', body: '只有当你主动导出、保存到“照片”或“文件”、使用系统分享功能，或通过邮件联系我们时，相关内容才会交给你选择的外部应用或服务。第三方服务按照其自身政策处理收到的信息。已导出或分享的副本不会因你删除应用内项目而自动删除。' },
         { id: 'security', title: '数据安全', body: '应用使用 iOS 权限机制和应用沙盒限制对创作素材的访问。请妥善保护设备、系统备份以及你导出到其他位置的文件。任何存储或传输方式都无法保证绝对安全。' },
         { id: 'children', title: '未成年人', body: 'PoseFunity 不面向未成年人定向提供服务，也不以主动收集未成年人个人信息为目的。未成年人应在监护人指导下使用本应用。' },
-        { id: 'choices', title: '你的权利与选择', body: '你可以在 iOS“设置”中管理设备权限，在应用项目页删除本地项目，或卸载应用以移除其沙盒中的数据。对你主动发送的支持邮件，你可以通过下方邮箱提出访问、更正或删除等请求；我们会依据适用法律处理，必要时核实请求人的身份。' },
+        { id: 'choices', title: '你的权利与选择', body: '你可以在 iOS“设置”中管理设备权限及 App 追踪许可。在适用地区，如果 Google 要求提供广告隐私选项，应用“设置”中会显示“广告隐私选择”，你可以通过它重新打开广告隐私选择界面。你也可以在应用项目页删除本地项目，或卸载应用以移除其沙盒中的数据。对你主动发送的支持邮件，你可以通过下方邮箱提出访问、更正或删除等请求；我们会依据适用法律处理，必要时核实请求人的身份。' },
         { id: 'changes', title: '政策更新', body: '如果应用功能或信息处理方式发生变化，我们会更新本政策并注明新的生效日期。对于重大变更，我们会通过应用、版本说明或本页面等适当方式告知。' },
         { id: 'website', title: '网站访问与联系方式', body: '本网站通过 GitHub Pages 托管。GitHub 可能为网页交付、安全和防滥用处理 IP 地址及必要技术日志；本页面未配置独立的广告或分析脚本。隐私问题可发送邮件至 forray2023@163.com。发送邮件时，邮件服务会处理你的邮箱地址和邮件内容，我们仅将收到的信息用于回复和处理你的请求。' },
       ],
@@ -70,7 +70,7 @@ export const poseFunityContent = {
     privacy: {
       title: 'Privacy Policy',
       summary: 'This policy explains how PoseFunity handles information when providing motion capture and video creation features, and how you can manage your data.',
-      effective: 'Effective September 23, 2026',
+      effective: 'Effective October 20, 2026',
       contents: 'On this page',
       sections: [
         { id: 'operator', title: 'Operator and scope', body: 'PoseFunity is provided by an independent developer. This policy applies to the PoseFunity iOS app and the PoseFunity pages on this website. It describes how information is handled. You may contact us about privacy using the email address at the end of this policy.' },
@@ -81,7 +81,7 @@ export const poseFunityContent = {
         { id: 'sharing', title: 'Sharing you initiate and external copies', body: 'Information is passed to an external app or service when you choose to export, save to Photos or Files, use the system share sheet, or email us. Those services handle received information under their own policies. Copies you export or share are not deleted automatically when you delete an in-app project.' },
         { id: 'security', title: 'Data security', body: 'The app uses iOS permissions and its app sandbox to limit access to creative media. Protect your device, system backups, and files exported elsewhere. No method of storage or transmission can be guaranteed to be completely secure.' },
         { id: 'children', title: 'Children', body: 'PoseFunity is not directed at children and does not aim to actively collect children’s personal information. Minors should use the app with guidance from a parent or guardian.' },
-        { id: 'choices', title: 'Your rights and choices', body: 'You can manage device permissions in iOS Settings, delete local projects from the Projects page, or uninstall the app to remove its sandbox data. For support emails you choose to send, you may request access, correction, or deletion through the email address below. We will handle requests under applicable law and may need to verify your identity.' },
+        { id: 'choices', title: 'Your rights and choices', body: 'You can manage device permissions and app tracking permission in iOS Settings. In applicable regions, if Google requires ad privacy options, the app displays “Ad Privacy Choices” in its Settings so you can reopen the ad privacy choices form. You can also delete local projects from the Projects page or uninstall the app to remove its sandbox data. For support emails you choose to send, you may request access, correction, or deletion through the email address below. We will handle requests under applicable law and may need to verify your identity.' },
         { id: 'changes', title: 'Changes to this policy', body: 'If app features or information practices change, we will update this policy and its effective date. Significant changes will be communicated through the app, release notes, this page, or another appropriate channel.' },
         { id: 'website', title: 'Website access and contact', body: 'This website is hosted on GitHub Pages. GitHub may process IP addresses and necessary technical logs to deliver and protect the site. These pages do not include separate ad or analytics scripts. For privacy questions, email forray2023@163.com. Your email service processes the address and content you send, and we use received information only to respond to and handle your request.' },
       ],
